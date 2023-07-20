@@ -61,7 +61,7 @@
 .sh-stp{
     margin-top: 20px;
     margin-bottom: 20px;
-    background-color: rgb(225, 247, 219);
+    background-color: rgb(242, 242, 242);
     padding: 20px;
     border-radius: 10px;
 }
@@ -69,12 +69,23 @@
 .sh-stp p{
     margin: 0;
     padding: 0;
+    padding-left: 20px;
+    margin-top: 10px;
 }
 
 #stp-hd{
     font-size: 22px;
     font-weight: 600;
     padding: 10px;
-    background-color: rgb(237, 249, 234);
+    background-color: rgb(250, 250, 250);
     border-radius: 10px;
+}
+
+#reg-btn{
+    background-color: rgb(64, 126, 64);
+    text-align: center;
+}
+
+.spacer-40{
+    height: 40px;
 }
