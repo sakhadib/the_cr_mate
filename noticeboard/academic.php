@@ -113,3 +113,7 @@ if (isset($_GET['uci'])) {
     </script>
 </body>
 </html>
+
+<?php
+include "../footer.php";
+?>
