@@ -1,3 +1,7 @@
+<?php
+include "../header.php";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -45,26 +49,25 @@
         <div class="row">
             <form action="noticetable.php" method="POST">
                 <div class="input-group input-group-sm mb-3">
-                  <span class="input-group-text" id="inputGroup-sizing-sm">UCI</span>
-                  <input type="text" class="form-control" name="inputField" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                    <span class="input-group-text" id="inputGroup-sizing-sm">UCI</span>
+                    <input type="text" class="form-control" name="inputField" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
                 </div>
                 <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                    <input type="radio" class="btn-check" name="option" id="academic" autocomplete="off" required>
+                    <input type="radio" class="btn-check" name="option" id="academic" value="academic" autocomplete="off" required>
                     <label class="btn btn-sm btn-outline-secondary" for="academic">Academic Updates</label>
-                
-                    <input type="radio" class="btn-check" name="option" id="club" autocomplete="off" required>
+
+                    <input type="radio" class="btn-check" name="option" id="club" value="club" autocomplete="off" required>
                     <label class="btn btn-sm btn-outline-secondary" for="club">Club Updates</label>
-                
-                    <input type="radio" class="btn-check" name="option" id="files" autocomplete="off" required>
+
+                    <input type="radio" class="btn-check" name="option" id="files" value="files" autocomplete="off" required>
                     <label class="btn btn-sm btn-outline-secondary" for="files">Files and Books</label>
-                
-                    <input type="radio" class="btn-check" name="option" id="classroom" autocomplete="off" required>
+
+                    <input type="radio" class="btn-check" name="option" id="classroom" value="classroom" autocomplete="off" required>
                     <label class="btn btn-sm btn-outline-secondary" for="classroom">Classroom Code</label>
-                  </div>
+                </div>
                 <button type="submit" class="btn btn-danger">Search</button>
             </form>
         </div>
     </div>
-    
 </body>
 </html>

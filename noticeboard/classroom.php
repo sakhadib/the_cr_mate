@@ -37,9 +37,9 @@
                     <table id="stable" class="table table-striped" style="width:100%">
                         <thead>
                             <tr>
-                                <th class = "hind">Date</th>
-                                <th class = "hind">Club</th>
-                                <th class = "hind">Details</th>
+                                <th class = "hind">course</th>
+                                <th class = "hind">teacher</th>
+                                <th class = "hind">classroom code</th>
                                 <th class = "hind">comment</th>
                             </tr>
                         </thead>

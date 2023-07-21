@@ -10,24 +10,31 @@
 
                 // Now you can use $selectedOption and $uci for further processing or storing in a database, etc.
                 // For example:
-                if ($selectedOption === 'academic') {
-                    // Redirect to academic.php with the parameters in the GET method
+                if ($selectedOption == 'academic') {
                     header("Location: academic.php?uci=" . urlencode($uci));
-                    exit(); // Ensure the script stops executing after the header redirection
-                } elseif ($selectedOption === 'club') {
-                    // Redirect to club.php with the parameters in the GET method
+                    exit(); 
+                } elseif ($selectedOption == 'club') {
                     header("Location: club.php?uci=" . urlencode($uci));
                     exit();
-                } elseif ($selectedOption === 'files') {
-                    // Redirect to files.php with the parameters in the GET method
+                } elseif ($selectedOption == 'files') {
                     header("Location: files.php?uci=" . urlencode($uci));
                     exit();
-                } elseif ($selectedOption === 'classroom') {
-                    // Redirect to classroom.php with the parameters in the GET method
+                } elseif ($selectedOption == 'classroom') {
                     header("Location: classroom.php?uci=" . urlencode($uci));
                     exit();
                 }
+                else{
+                    echo "assign somossa " . $selectedOption;
+                    // header("Location: ../");
+                    // exit();
+                }
             }
+            else{
+                echo "uci somossa";
+            }
+        }
+        else{
+            echo "ooption somossa";
         }
     }
     else{

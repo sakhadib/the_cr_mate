@@ -38,9 +38,9 @@
                         <thead>
                             <tr>
                                 <th class = "hind">Date</th>
-                                <th class = "hind">Club</th>
-                                <th class = "hind">Details</th>
-                                <th class = "hind">comment</th>
+                                <th class = "hind">Title</th>
+                                <th class = "hind">Course</th>
+                                <th class = "hind">semester</th>
                             </tr>
                         </thead>
                         <tbody>
