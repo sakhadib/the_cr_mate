@@ -2,6 +2,17 @@
 include "../header.php";
 ?>
 
+<?php
+    // Check if the cookie is already set
+    $uci = '';
+    if (isset($_COOKIE['uci_cookie'])) {
+        // If the cookie exists, get its current value
+        $uci = $_COOKIE['uci_cookie'];
+        $last = "your last searched UCI : " . $uci;
+    } 
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -50,8 +61,9 @@ include "../header.php";
             <form action="noticetable.php" method="POST">
                 <div class="input-group input-group-sm mb-3">
                     <span class="input-group-text" id="inputGroup-sizing-sm">UCI</span>
-                    <input type="text" class="form-control" name="inputField" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                    <input type="text" class="form-control" name="inputField" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" value="<?php echo isset($uci) ? htmlspecialchars($uci) : ''; ?>">
                 </div>
+
                 <div class="btn-group btn-group-toggle" data-toggle="buttons">
                     <input type="radio" class="btn-check" name="option" id="academic" value="academic" autocomplete="off" required>
                     <label class="btn btn-sm btn-outline-secondary" for="academic">Academic Updates</label>
@@ -65,7 +77,19 @@ include "../header.php";
                     <input type="radio" class="btn-check" name="option" id="classroom" value="classroom" autocomplete="off" required>
                     <label class="btn btn-sm btn-outline-secondary" for="classroom">Classroom Code</label>
                 </div>
-                <button type="submit" class="btn btn-danger">Search</button>
+                <div class="d-lg-none d-block" style = "height : 20px">
+
+                </div>
+
+                <style>
+                    @media screen and (max-width: 767px) {
+                        /* Apply styles only on devices with a maximum width of 767px */
+                        .sh-search {
+                            width: 100%; /* Set the button to full width on mobile devices */
+                        }
+                    }
+                </style>
+                <button type="submit" class="btn btn-danger sh-search">Search</button>
             </form>
         </div>
     </div>
