@@ -2,10 +2,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800&display=swap');
 
-body{
-    min-height: 100vh;
-    /* background-color: bisque; */
-}
+
 
 .tr-formholder {
     display: flex;
@@ -15,6 +12,7 @@ body{
     text-align: center;
     min-height: 100vh;
     /* background-color: powderblue; */
+    /* max-width: 400px; */
 }
 
 .signup-image{
