@@ -21,78 +21,77 @@
     <div class="tr-formbody">
         <div class="container">
             <div class="row">
-                <div class="col-lg-6">
+                <div class="col-lg-6 d-none d-lg-block">
                     <div class="tr-formholder">
                         <img src="../images/CRM_Signup.png" class="signup-image">
                     </div>
                 </div>
                 
-                <div class="col-lg-6">
+                <div class="col-lg-6 col-12">
                     <div class="tr-formholder">
-                        <div class="tr-formcontent">
-                            <div class="tr-formitems">
-                                <h3>Register Today</h3>
-                                <p>Fill in the data below.</p>
-                                <form class="requires-validation" novalidate>
-                                    <div class="col-md-12">
-                                        <input type="text" class="form-control" name="name" placeholder="Full Name" required>
-                                        <div class="valid-feedback">Username field is valid!</div>
-                                        <div class="invalid-feedback">Username field cannot be blank!</div>
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="tr-formcontent">
+                                    <div class="tr-formitems">
+                                        <h3>Register Today</h3>
+                                        <p>Fill in the data below.</p>
+                                        <form class="requires-validation" novalidate>
+                                            <div class="col-md-12">
+                                                <input type="text" class="form-control" name="name" placeholder="Full Name" required>
+                                                <div class="valid-feedback">Username field is valid!</div>
+                                                <div class="invalid-feedback">Username field cannot be blank!</div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <input type="email" class="form-control" name="email" placeholder="E-mail Address" required>
+                                                <div class="valid-feedback">E-mail field is valid!</div>
+                                                <div class="invalid-feedback">E-mail field cannot be blank!</div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <select class="form-select mt-3" required>
+                                                    <option selected disabled value="">University</option>
+                                                    <option value="IUT">Islamic University of Technology</option>
+                                                    <option value="BUET">Bangladesh University of Engineering and Technology</option>
+                                                    <option value="DU">Dhaka University</option>
+                                             </select>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <input type="text" class="form-control" name="department" placeholder="Department/Program" required>
+                                                <div class="valid-feedback">Department field is valid!</div>
+                                                <div class="invalid-feedback">Department field cannot be blank!</div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <input type="text" class="form-control" name="batch" placeholder="Batch" required>
+                                                <div class="valid-feedback">Batch field is valid!</div>
+                                                <div class="invalid-feedback">Batch field cannot be blank!</div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <input type="text" class="form-control" name="password" placeholder="Password" required>
+                                                <div class="valid-feedback">Password field is valid!</div>
+                                                <div class="invalid-feedback">Password field cannot be blank!</div>
+                                            </div>
+                                            <div class="col-md-12 mt-3">
+                                                <label class="mb-3 mr-1" for="gender">Gender: </label>
+                    
+                                                <input type="radio" class="btn-check" name="gender" id="male" autocomplete="off" required>
+                                                <label class="btn btn-sm btn-outline-secondary" for="male">Male</label>
+                    
+                                                <input type="radio" class="btn-check" name="gender" id="female" autocomplete="off" required>
+                                                <label class="btn btn-smbtn btn-sm btn-outline-secondary" for="female">Female</label>
+                                                <div class="valid-feedback mv-up">You selected a gender!</div>
+                                                <div class="invalid-feedback mv-up">Please select a gender!</div>
+                                            </div>
+                    
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                                                <label class="form-check-label">I confirm that all data are correct</label>
+                                                <div class="invalid-feedback">Please confirm that the entered data are all correct!</div>
+                                            </div>
+                                            <div class="form-button mt-3">
+                                                <button id="submit" type="submit" class="btn btn-primary">Register</button>
+                                            </div>       
+                                        </form>
                                     </div>
-                                    <div class="col-md-12">
-                                        <input type="email" class="form-control" name="email" placeholder="E-mail Address" required>
-                                        <div class="valid-feedback">E-mail field is valid!</div>
-                                        <div class="invalid-feedback">E-mail field cannot be blank!</div>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <select class="form-select mt-3" required>
-                                            <option selected disabled value="">University</option>
-                                            <!-- <option value="jweb">Junior Web Developer</option>
-                                            <option value="sweb">Senior Web Developer</option>
-                                            <option value="pmanager">Project Manager</option> -->
-                                     </select>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <input type="text" class="form-control" name="department" placeholder="Department" required>
-                                        <div class="valid-feedback">Department field is valid!</div>
-                                        <div class="invalid-feedback">Department field cannot be blank!</div>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <input type="text" class="form-control" name="program" placeholder="Program" required>
-                                        <div class="valid-feedback">Program field is valid!</div>
-                                        <div class="invalid-feedback">Program field cannot be blank!</div>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <input type="text" class="form-control" name="batch" placeholder="Batch" required>
-                                        <div class="valid-feedback">Batch field is valid!</div>
-                                        <div class="invalid-feedback">Batch field cannot be blank!</div>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <input type="text" class="form-control" name="password" placeholder="Password" required>
-                                        <div class="valid-feedback">Password field is valid!</div>
-                                        <div class="invalid-feedback">Password field cannot be blank!</div>
-                                    </div>
-                                    <div class="col-md-12 mt-3">
-                                        <label class="mb-3 mr-1" for="gender">Gender: </label>
-            
-                                        <input type="radio" class="btn-check" name="gender" id="male" autocomplete="off" required>
-                                        <label class="btn btn-sm btn-outline-secondary" for="male">Male</label>
-            
-                                        <input type="radio" class="btn-check" name="gender" id="female" autocomplete="off" required>
-                                        <label class="btn btn-smbtn btn-sm btn-outline-secondary" for="female">Female</label>
-                                        <div class="valid-feedback mv-up">You selected a gender!</div>
-                                        <div class="invalid-feedback mv-up">Please select a gender!</div>
-                                    </div>
-            
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
-                                        <label class="form-check-label">I confirm that all data are correct</label>
-                                        <div class="invalid-feedback">Please confirm that the entered data are all correct!</div>
-                                    </div>
-                                    <div class="form-button mt-3">
-                                        <button id="submit" type="submit" class="btn btn-primary">Register</button>
-                                    </div>       
-                                </form>
+                                </div>
                             </div>
                         </div>
                     </div>
