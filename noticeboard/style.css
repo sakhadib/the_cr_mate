@@ -1,0 +1,18 @@
+*{
+    font-family: "Poppins",sans-serif;
+}
+
+
+
+.sh-ntc-hd{
+    font-size: 35px;
+    font-weight: 400;
+}
+
+.sh-top{
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
