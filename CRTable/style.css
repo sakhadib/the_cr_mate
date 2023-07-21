@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800&display=swap');
+
 body{
     min-height: 100vh;
     /* background-color: bisque; */
@@ -17,4 +19,134 @@ body{
 
 .signup-image{
     width: 500px;
+}
+
+.tr-formcontent{
+    position: relative;
+    text-align: center;
+    display: flex;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-align-items: center;
+    align-items: center;
+    padding: 60px;
+    font-family: 'Rubik', sans-serif;
+}
+
+.tr-formitems{
+    border: 2px solid #333;
+    padding: 30px;
+    display: inline-block;
+    min-width: 550px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    text-align: left;
+    -webkit-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+    /* background-color: #ff606e; */
+}
+
+.tr-formcontent h3 {
+    color: #333;
+    text-align: left;
+    font-size: 40px;
+    font-weight: 800;
+    margin-bottom: 10px;
+    
+}
+
+.tr-formcontent h3 .form-title {
+    margin-bottom: 30px;
+}
+
+.tr-formcontent p {
+    color: #333;
+    text-align: left;
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 15px;
+    margin-bottom: 20px;
+}
+
+
+.tr-formcontent label, .was-validated .form-check-input:invalid~.form-check-label, .was-validated .form-check-input:valid~.form-check-label{
+    color: #333;
+}
+
+.tr-formcontent input[type=text], .tr-formcontent input[type=password], .tr-formcontent input[type=email], .tr-formcontent select {
+    width: 100%;
+    padding: 9px 20px;
+    text-align: left;
+    border: 2px solid #999;
+    outline: 0;
+    border-radius: 6px;
+    background-color: #ffffff;
+    font-size: 15px;
+    font-weight: 300;
+    color: #333;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    margin-top: 16px;
+}
+.btn-outline-secondary{
+    background-color: #ffffff;
+}
+
+
+.btn-primary{
+    background-color: #0088ff;
+    outline: none;
+    border: 0px;
+    box-shadow: none;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active{
+    /* background-color: #444749; */
+    background-color: #0088ff;
+    outline: none !important;
+    border: none !important;
+    /* scale: 1.1; */
+    box-shadow: 0 0 10px rgba(0, 0, 0, .4);
+    transition: all 0.3s ease;
+}
+
+.tr-formcontent textarea {
+    position: static !important;
+    width: 100%;
+    padding: 8px 20px;
+    border-radius: 6px;
+    text-align: left;
+    background-color: #333;
+    border: 0;
+    font-size: 15px;
+    font-weight: 300;
+    color: #8D8D8D;
+    outline: none;
+    resize: none;
+    height: 120px;
+    -webkit-transition: none;
+    transition: none;
+    margin-bottom: 14px;
+}
+
+.tr-formcontent textarea:hover, .tr-formcontent textarea:focus {
+    border: 0;
+    background-color: #ebeff8;
+    color: #8D8D8D;
+}
+
+
+.mv-up{
+    margin-top: -9px !important;
+    margin-bottom: 8px !important;
+}
+
+.invalid-feedback{
+    color: #ff606e;
+}
+
+.valid-feedback{
+   color: #2acc80;
 }
