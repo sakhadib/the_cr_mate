@@ -1,3 +1,52 @@
+<?php
+include "../header.php";
+?>
+
+<?php
+// Include the connection.php file to establish a database connection
+require_once "connection.php";
+$tableRows = "";
+
+// Check if the 'uic' variable exists in the GET request
+if (isset($_GET['uci'])) {
+    // Sanitize the input to prevent SQL injection
+    $uic = mysqli_real_escape_string($conn, $_GET['uci']);
+
+    // Query to fetch the rows matching the provided 'uic'
+    $query = "SELECT course, teacher, code, comment FROM classroom WHERE uic = '$uic'";
+
+    // Execute the query
+    $result = mysqli_query($conn, $query);
+    // Initialize the $tableRows variable
+    
+    // Check if the query was successful
+    if ($result) {
+        
+
+        // Loop through the result set and create table rows
+        while ($row = mysqli_fetch_assoc($result)) {
+            // Create a new row in the table
+            $tableRows .= "<tr>";
+            $tableRows .= "<td>" . $row['course'] . "</td>";
+            $tableRows .= "<td>" . $row['teacher'] . "</td>";
+            $tableRows .= "<td>" . $row['code'] . "</td>";
+            $tableRows .= "<td>" . $row['comment'] . "</td>";
+            $tableRows .= "</tr>";
+        }
+
+        // Free the result set
+        mysqli_free_result($result);
+    } else {
+        // Query failed
+        echo "Error executing the query: " . mysqli_error($conn);
+    }
+
+    // Close the database connection
+    mysqli_close($conn);
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -45,7 +94,7 @@
                         </thead>
                         <tbody>
                     <!-- Automatic Code injected by PHP -->
-                        <!-- <?php echo $tableRows; ?> -->
+                        <?php echo $tableRows; ?>
                     </tbody>
                 </table>
                             
