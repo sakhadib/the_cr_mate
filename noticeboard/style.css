@@ -1,0 +1,110 @@
+*{
+    font-family: "Poppins",sans-serif;
+}
+
+
+
+.sh-ntc-hd{
+    font-size: 35px;
+    font-weight: 400;
+}
+
+.sh-top{
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.main-table{
+    min-height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+
+
+
+
+
+
+/* Footer Style */
+
+.sh-footer{
+    background-color: rgb(22, 27, 22);
+    /* min-height: 50vh; */
+    z-index: 0;
+    padding: 40px;
+    padding-bottom: 0px;
+
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.sh-subscribe{
+    min-height: 12vh;
+    background-color: white;
+    border-radius: 15px;
+    margin-top: -15px;
+    box-shadow: 0 0 20px black;
+    z-index: 100;
+}
+
+.desc{
+    font-size: 25px;
+}
+
+.sh-icon{
+    width: 40px;
+}
+
+.sh-icon-list ul{
+    list-style: none;
+    margin-left: 0;
+}
+
+.sh-icon-list ul li{
+    display: inline-block;
+    margin: 15px;
+} 
+
+.sh-img{
+    max-width: 600px;
+}
+
+.novochari{
+    max-width: 240px;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 767px) {
+    .sh-img{
+        max-width: 300px;
+    }
+
+    .desc{
+        font-size: 20px;
+    }
+
+    .sh-icon{
+        width: 25px;
+    }
+    .sh-icon-list ul li{
+        display: inline-block;
+        margin: 6px;
+    } 
+
+
+}
