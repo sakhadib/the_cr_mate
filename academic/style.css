@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800&display=swap');
+
+.tr-body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 100vh;
+    /* background-color: antiquewhite; */
+    font-family: 'Rubik', sans-serif;
+}
+.signup-image{
+    width: 450px;
+}
+
+.tr-content{
+    /* background-color: blueviolet; */
+    padding: 20px;
+}
+.tr-greeting{
+    text-align: left;
+}
+.tr-greeting h1{
+    color: #001566;
+    font-weight: 800;
+}
+
+.tr-greeting h1 span{
+    color: #006891;
+}
+
+.tr-greeting p{
+    font-size: 20px;
+    text-align: justify;
+    font-weight: 400;
+    color: #333;
+}
+
+.form-control{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    min-height: 40px;
+    border: 2px solid #001566;
+    font-size: 18px;
+    color: #333;
+}
+.form-control:hover, .form-control:focus, .form-control:active{
+    background-color: rgb(0, 171, 240, 0.1);
+}
+
+.btn-primary{
+    background-color: #0088ff;
+    outline: none;
+    border: 0px;
+    box-shadow: none;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active{
+    /* background-color: #444749; */
+    background-color: #0088ff;
+    outline: none;
+    border: none;
+    /* scale: 1.1; */
+    box-shadow: 0 0 10px rgba(0, 0, 0, .4);
+    transition: all 0.3s ease;
+}
