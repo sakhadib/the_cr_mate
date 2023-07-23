@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800&display=swap');
+
+
+.tr-academicform{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.tr-academicsection{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 50vh;
+    /* background-color: #00abf0; */
+    font-family: 'Rubik', sans-serif;
+}
+
+.academic-image{
+    width: 70%;
+}
+
+.tr-formseg{
+    padding-bottom: 20px;
+}
+
+.tr-greeting{
+    text-align: left;
+    padding: 10px;
+}
+.tr-greeting h1{
+    color: #333;
+    font-weight: 800;
+    font-size: 50px;
+}
+
+.tr-greeting h1 span{
+    color: #0088ff;
+}
+
+.tr-greeting p{
+    font-size: 20px;
+    text-align: justify;
+    font-weight: 400;
+    color: #333;
+}
+.tr-greeting p span{
+    font-weight: 700;
+    color: #ff606e;
+    font-size: 24px;
+}
+
+.form-control{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    min-height: 40px;
+    border: 2px solid #333;
+    font-size: 18px;
+    color: #333;
+}
+.form-control:hover, .form-control:focus, .form-control:active{
+    background-color: rgb(0, 171, 240, 0.1);
+}
+
+.btn-primary{
+    background-color: #0088ff;
+    outline: none;
+    border: 0px;
+    box-shadow: none;
+    font-size: 20px;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active{
+    background-color: #0088ff;
+    outline: none;
+    border: none;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .4);
+    transition: all 0.3s ease;
+}
