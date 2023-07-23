@@ -13,7 +13,7 @@
 
 .tr-abouttitle{
     min-height: 15vh;
-    background-color: yellowgreen;
+    /* background-color: yellowgreen; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -38,7 +38,7 @@
     align-items: center;
     text-align: justify;
     padding: 20px;
-    background-color: blanchedalmond;
+    /* background-color: blanchedalmond; */
     font-family: 'Rubik', sans-serif;
     font-size: 20px;
     font-weight: 400;
@@ -79,7 +79,7 @@ height: 5px;
 /* ---------- Novochari ---------- */
 .tr-novochari_title{
     min-height: 15vh;
-    background-color: #ff606e;
+    /* background-color: #ff606e; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -99,17 +99,18 @@ height: 5px;
 }
 
 .tr-novochari_details{
-    min-height: 50vh;
+    min-height: 10vh;
     justify-content: center;
     align-items: center;
     text-align: justify;
     padding: 20px;
-    background-color: powderblue;
+    /* background-color: powderblue; */
     font-family: 'Rubik', sans-serif;
     font-size: 20px;
     font-weight: 400;
     color: #333;
 }
+
 .tr-novochari_details p span{
     font-size: 24px;
     font-weight: 600px;
@@ -122,4 +123,68 @@ height: 5px;
 }
 .tf{
     color: #FF7A3C;
+}
+
+
+/* ---------- Team Members --------- */
+.tr-novochari_teamltitle{
+    min-height: 5vh;
+    /* background-color: #ff606e; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.tr-novochari_teamltitle h1{
+    font-family: 'Rubik', sans-serif;
+    font-size: 45px;
+    font-weight: 800;
+    color: #333;
+    margin: 0;
+}
+
+.tr-teammembers{
+    min-height: 50vh;
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    /* background-color: red; */
+    font-family: 'Rubik', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    color: #333;
+    margin: 15px 0;
+    padding: 20px 0;
+    border: 3px solid #0080f0;
+    border-radius: 25px;
+}
+
+.member-img{
+    width: 50%;
+    border: 2px solid #333;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+.name{
+    font-weight: 800;
+}
+
+.pf-btn a{
+    display: inline-flex ;
+    justify-content: center;
+    align-items: center;
+    width: 180px;
+    height: 48px;
+    position: relative;
+    font-family: 'Rubik', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+    background:#ff606e;
+    border-radius: 8px;
+    text-decoration: none;
+    letter-spacing: 1px;
+    z-index: 1;
+    overflow: hidden;
+    transition: .5s; 
 }
