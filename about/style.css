@@ -12,12 +12,11 @@
 }
 
 .tr-abouttitle{
-    min-height: 10vh;
+    min-height: 15vh;
     background-color: yellowgreen;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-bottom: 20px;
     
 }
 .tr-abouttitle h1{
@@ -40,9 +39,6 @@
     text-align: justify;
     padding: 20px;
     background-color: blanchedalmond;
-}
-
-.tr-aboutdetails{
     font-family: 'Rubik', sans-serif;
     font-size: 20px;
     font-weight: 400;
@@ -82,10 +78,48 @@ height: 5px;
 
 /* ---------- Novochari ---------- */
 .tr-novochari_title{
-    min-height: 10vh;
+    min-height: 15vh;
     background-color: #ff606e;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-bottom: 20px;
+}
+
+.tr-novochari_title h1{
+    font-family: 'Rubik', sans-serif;
+    font-size: 45px;
+    font-weight: 800;
+    color: #333;
+    margin: 0;
+}
+
+.nvc-img{
+    width: 300px;
+    padding-bottom: 10px;
+}
+
+.tr-novochari_details{
+    min-height: 50vh;
+    justify-content: center;
+    align-items: center;
+    text-align: justify;
+    padding: 20px;
+    background-color: powderblue;
+    font-family: 'Rubik', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    color: #333;
+}
+.tr-novochari_details p span{
+    font-size: 24px;
+    font-weight: 600px;
+}
+.sh{
+    color: #ff606e;
+}
+.tr{
+    color: #0080f0;
+}
+.tf{
+    color: #FF7A3C;
 }
