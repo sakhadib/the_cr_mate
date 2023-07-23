@@ -18,10 +18,36 @@
     align-items: center;
     text-align: center;
     min-height: 50vh;
-    /* background-color: #00abf0; */
+    background-color: #00abf0;
     font-family: 'Rubik', sans-serif;
 }
 
 .classroom-image{
     width: 70%;
+}
+
+.tr-greeting{
+    text-align: left;
+    padding: 10px;
+}
+.tr-greeting h1{
+    color: #333;
+    font-weight: 800;
+    font-size: 50px;
+}
+
+.tr-greeting h1 span{
+    color: #0088ff;
+}
+
+.tr-greeting p{
+    font-size: 20px;
+    text-align: justify;
+    font-weight: 400;
+    color: #333;
+}
+.tr-greeting p span{
+    font-weight: 700;
+    color: #ff606e;
+    font-size: 24px;
 }
