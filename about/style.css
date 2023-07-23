@@ -10,3 +10,22 @@
     align-items: center;
     
 }
+
+.tr-abouttitle{
+    min-height: 10vh;
+    background-color: yellowgreen;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.tr-abouttitle h1{
+    font-family: 'Rubik', sans-serif;
+    font-size: 45px;
+    font-weight: 800;
+    margin: 0;
+}
+
+.crm-img{
+    width: 175px;
+}
