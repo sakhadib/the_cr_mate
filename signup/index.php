@@ -1,3 +1,7 @@
+<?php
+include "../header.php";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -35,7 +39,7 @@
                                     <div class="tr-formitems">
                                         <h3>Register Today</h3>
                                         <p>Fill in the data below.</p>
-                                        <form class="requires-validation">
+                                        <form class="requires-validation" action="sign.php" method="post">
                                             <div class="col-md-12">
                                                 <input type="text" class="form-control" name="name" placeholder="Full Name" required>
                                                 <div class="valid-feedback">Username field is valid!</div>
@@ -47,15 +51,17 @@
                                                 <div class="invalid-feedback">E-mail field cannot be blank!</div>
                                             </div>
                                             <div class="col-md-12">
-                                                <select class="form-select mt-3" required>
-                                                    <option selected disabled value="">University</option>
-                                                    <option value="IUT">Islamic University of Technology</option>
-                                                    <option value="BUET">Bangladesh University of Engineering and Technology</option>
-                                                    <option value="DU">Dhaka University</option>
-                                             </select>
+                                                <input type="text" class="form-control" name="university" placeholder="university" required>
+                                                <div class="valid-feedback">university field is valid!</div>
+                                                <div class="invalid-feedback">university field cannot be blank!</div>
                                             </div>
                                             <div class="col-md-12">
                                                 <input type="text" class="form-control" name="department" placeholder="Department/Program" required>
+                                                <div class="valid-feedback">Department field is valid!</div>
+                                                <div class="invalid-feedback">Department field cannot be blank!</div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <input type="text" class="form-control" name="univ_id" placeholder="Yoour Student ID" required>
                                                 <div class="valid-feedback">Department field is valid!</div>
                                                 <div class="invalid-feedback">Department field cannot be blank!</div>
                                             </div>
@@ -65,29 +71,25 @@
                                                 <div class="invalid-feedback">Batch field cannot be blank!</div>
                                             </div>
                                             <div class="col-md-12">
-                                                <input type="text" class="form-control" name="password" placeholder="Password" required>
+                                                <input type="password" class="form-control" name="password" placeholder="Password" required>
                                                 <div class="valid-feedback">Password field is valid!</div>
                                                 <div class="invalid-feedback">Password field cannot be blank!</div>
                                             </div>
-                                            <div class="col-md-12 mt-3">
-                                                <label class="mb-3 mr-1" for="gender">Gender: </label>
-                    
-                                                <input type="radio" class="btn-check" name="gender" id="male" autocomplete="off" required>
-                                                <label class="btn btn-sm btn-outline-secondary" for="male">Male</label>
-                    
-                                                <input type="radio" class="btn-check" name="gender" id="female" autocomplete="off" required>
-                                                <label class="btn btn-smbtn btn-sm btn-outline-secondary" for="female">Female</label>
-                                                <div class="valid-feedback mv-up">You selected a gender!</div>
-                                                <div class="invalid-feedback mv-up">Please select a gender!</div>
+                                            <div class="col-md-12">
+                                                <input type="password" class="form-control" name="re_password" placeholder="Confirm Password" required>
+                                                <div class="valid-feedback">Password field is valid!</div>
+                                                <div class="invalid-feedback">Password field cannot be blank!</div>
                                             </div>
-                    
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
-                                                <label class="form-check-label">I confirm that all data are correct</label>
-                                                <div class="invalid-feedback">Please confirm that the entered data are all correct!</div>
-                                            </div>
+                                            <style>
+                                                @media screen and (max-width: 767px) {
+                                                    /* Apply styles only on devices with a maximum width of 767px */
+                                                    .sh-search {
+                                                        width: 100%; /* Set the button to full width on mobile devices */
+                                                    }
+                                                }
+                                            </style>
                                             <div class="form-button mt-3">
-                                                <button id="submit" type="submit" class="btn btn-primary">Register</button>
+                                                <button id="submit" type="submit" class="btn btn-primary sh-search">Register</button>
                                             </div>       
                                         </form>
                                     </div>
@@ -99,5 +101,9 @@
             </div>
         </div>
     </div>
+
+<?php
+include "../footer.php";
+?>
 </body>
 </html>

@@ -138,3 +138,12 @@
 .valid-feedback{
    color: #2acc80;
 }
+
+
+.sh-mid{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+}
