@@ -2,35 +2,46 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800&display=swap');
 
-.tr-body{
+
+.tr-clubform{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.tr-clubsection{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    min-height: 100vh;
-    /* background-color: antiquewhite; */
+    min-height: 50vh;
+    /* background-color: #00abf0; */
     font-family: 'Rubik', sans-serif;
 }
-.signup-image{
+
+.club-image{
     width: 70%;
 }
 
-.tr-content{
-    /* background-color: blueviolet; */
-    padding: 20px;
+.tr-formseg{
+    padding-bottom: 20px;
 }
+
 .tr-greeting{
     text-align: left;
+    padding: 10px;
 }
 .tr-greeting h1{
-    color: #001566;
+    color: #333;
     font-weight: 800;
     font-size: 50px;
 }
 
 .tr-greeting h1 span{
-    color: #006891;
+    color: #0088ff;
 }
 
 .tr-greeting p{
@@ -49,7 +60,7 @@
     margin-top: 5px;
     margin-bottom: 5px;
     min-height: 40px;
-    border: 2px solid #001566;
+    border: 2px solid #333;
     font-size: 18px;
     color: #333;
 }
@@ -67,11 +78,9 @@
 }
 
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active{
-    /* background-color: #444749; */
     background-color: #0088ff;
     outline: none;
     border: none;
-    /* scale: 1.1; */
     box-shadow: 0 0 10px rgba(0, 0, 0, .4);
     transition: all 0.3s ease;
 }
