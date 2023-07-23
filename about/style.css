@@ -2,7 +2,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800&display=swap');
 
-
+/* ---------- CR Mate ---------- */
 .tr-about{
     min-height: 100vh;
     display: flex;
@@ -17,15 +17,75 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    padding-bottom: 20px;
     
 }
 .tr-abouttitle h1{
     font-family: 'Rubik', sans-serif;
     font-size: 45px;
     font-weight: 800;
+    color: #333;
     margin: 0;
 }
 
 .crm-img{
     width: 175px;
+}
+
+.tr-aboutdetails{
+    min-height: 20vh;
+
+    justify-content: center;
+    align-items: center;
+    text-align: justify;
+    padding: 20px;
+    background-color: blanchedalmond;
+}
+
+.tr-aboutdetails{
+    font-family: 'Rubik', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    color: #333;
+}
+
+.tr-aboutdetails span{
+    font-size: 24px;
+    font-weight: 800;
+    color: #ff606e;
+}
+.tr-abtfeatures{
+    padding: 10px 50px 10px 50px;
+}
+@media(max-width: 575px){
+    .tr-abtfeatures{
+        padding: 10px 25px 10px 25px;
+    }
+
+}
+.tr-abtfeatures span{
+    font-size: 22px;
+    font-weight: 600;
+    color: #FF7A3C;
+}
+
+.spc-5{
+height: 5px;
+}
+
+.rsxcrm-img{
+    width: 110px;
+}
+.rsxnvc-img{
+    width: 200px;
+}
+
+/* ---------- Novochari ---------- */
+.tr-novochari_title{
+    min-height: 10vh;
+    background-color: #ff606e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 20px;
 }
