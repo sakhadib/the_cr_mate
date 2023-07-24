@@ -20,7 +20,7 @@
               </li>
               
               <li class="nav-item">
-                <a class="nav-link" href="#">About us</a>
+                <a class="nav-link" href="../about/">About us</a>
               </li>
             </ul>
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">

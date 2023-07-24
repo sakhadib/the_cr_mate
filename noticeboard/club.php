@@ -13,7 +13,7 @@ if (isset($_GET['uci'])) {
     $uic = mysqli_real_escape_string($conn, $_GET['uci']);
 
     // Query to fetch the rows matching the provided 'uic'
-    $query = "SELECT date, club, Details, comment FROM club WHERE uic = '$uic' ORDER BY date DESC";
+    $query = "SELECT date, club, Details, id FROM club WHERE uic = '$uic' ORDER BY date DESC";
 
     // Execute the query
     $result = mysqli_query($conn, $query);
@@ -26,11 +26,20 @@ if (isset($_GET['uci'])) {
         // Loop through the result set and create table rows
         while ($row = mysqli_fetch_assoc($result)) {
             // Create a new row in the table
+            $details = $row['Details'];
+
+            // Check if the content is longer than 30 characters
+            if (strlen($details) > 30) {
+                // Truncate the content to the first 30 characters and add "..." at the end
+                $details = substr($details, 0, 30) . "...";
+            }
+            $id = $row['id'];
+
             $tableRows .= "<tr>";
             $tableRows .= "<td>" . $row['date'] . "</td>";
             $tableRows .= "<td>" . $row['club'] . "</td>";
-            $tableRows .= "<td>" . $row['Details'] . "</td>";
-            $tableRows .= "<td>" . $row['comment'] . "</td>";
+            $tableRows .= "<td>" . $details . "</td>";
+            $tableRows .= "<td>" . '<a href="clubdet.php?uic='. $uic .'&id='. $id .'">Details</a> ' . "</td>";
             $tableRows .= "</tr>";
         }
 
@@ -87,8 +96,8 @@ if (isset($_GET['uci'])) {
                             <tr>
                                 <th class = "hind">Date</th>
                                 <th class = "hind">Club</th>
-                                <th class = "hind">Details</th>
-                                <th class = "hind">comment</th>
+                                <th class = "hind">Title</th>
+                                <th class = "hind">More</th>
                             </tr>
                         </thead>
                         <tbody>

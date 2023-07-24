@@ -12,7 +12,7 @@ include "../header.php";
         $uic = mysqli_real_escape_string($conn, $_GET['uci']);
 
         // Query to fetch the rows matching the provided 'uic'
-        $query = "SELECT date, title, course, semester, url FROM files WHERE uic = '$uic' ORDER BY date DESC";
+        $query = "SELECT date, title, course, semester, url, id FROM files WHERE uic = '$uic' ORDER BY date DESC";
 
         // Execute the query
         $result = mysqli_query($conn, $query);
@@ -24,11 +24,15 @@ include "../header.php";
 
             // Loop through the result set and create table rows
             while ($row = mysqli_fetch_assoc($result)) {
-                $title = '<a href = "' . $row['url'] . '">' . $row['title'] . '</a>';
+                
+                $id = $row['id'];
+                
+                $more =  '<a href="filesdet.php?uic='. $uic .'&id='. $id .'">' . $row["title"] . '</a>';
+
                 // Create a new row in the table
                 $tableRows .= "<tr>";
                 $tableRows .= "<td>" . $row['date'] . "</td>";
-                $tableRows .= "<td>" . $title . "</td>";
+                $tableRows .= "<td>" . $more . "</td>";
                 $tableRows .= "<td>" . $row['course'] . "</td>";
                 $tableRows .= "<td>" . $row['semester'] . "</td>";
                 $tableRows .= "</tr>";
@@ -88,7 +92,7 @@ include "../header.php";
                                 <th class = "hind">Date</th>
                                 <th class = "hind">Title</th>
                                 <th class = "hind">Course</th>
-                                <th class = "hind">semester</th>
+                                <th class = "hind">sem</th>
                             </tr>
                         </thead>
                         <tbody>

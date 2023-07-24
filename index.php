@@ -1,3 +1,16 @@
+<!-- PHP -->
+<?php
+  // start the session
+  session_start();
+
+  // check if the session is active and the 'uci' session variable is set
+  if (isset($_SESSION['uci'])) {
+    // redirect to dashboard
+    header("Location: dashboard/");
+  }
+?>
+
+<!-- HTML -->
 <!DOCTYPE html>
 <html lang="en">
 <head>

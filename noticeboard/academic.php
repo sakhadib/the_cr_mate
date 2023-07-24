@@ -13,7 +13,7 @@ if (isset($_GET['uci'])) {
     $uic = mysqli_real_escape_string($conn, $_GET['uci']);
 
     // Query to fetch the rows matching the provided 'uic'
-    $query = "SELECT date, course, teacher, details, comment FROM academic WHERE uic = '$uic' ORDER BY date DESC";
+    $query = "SELECT id, date, course, details FROM academic WHERE uic = '$uic' ORDER BY date DESC";
 
     // Execute the query
     $result = mysqli_query($conn, $query);
@@ -26,12 +26,13 @@ if (isset($_GET['uci'])) {
         // Loop through the result set and create table rows
         while ($row = mysqli_fetch_assoc($result)) {
             // Create a new row in the table
+            $id = $row['id'];
+
             $tableRows .= "<tr>";
             $tableRows .= "<td>" . $row['date'] . "</td>";
             $tableRows .= "<td>" . $row['course'] . "</td>";
-            $tableRows .= "<td>" . $row['teacher'] . "</td>";
             $tableRows .= "<td>" . $row['details'] . "</td>";
-            $tableRows .= "<td>" . $row['comment'] . "</td>";
+            $tableRows .= "<td>" . '<a href="acadet.php?uic='. $uic .'&id='. $id .'">Details</a> ' . "</td>";
             $tableRows .= "</tr>";
         }
 
@@ -44,6 +45,10 @@ if (isset($_GET['uci'])) {
 
     // Close the database connection
     mysqli_close($conn);
+}
+else{
+    header("Location: ../noticeboard/");
+    exit();
 }
 ?>
 
@@ -88,9 +93,8 @@ if (isset($_GET['uci'])) {
                             <tr>
                                 <th class = "hind">Date</th>
                                 <th class = "hind">Course</th>
-                                <th class = "hind">Teacher</th>
                                 <th class = "hind">Details</th>
-                                <th class = "hind">comment</th>
+                                <th class = "hind">More</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -111,6 +115,17 @@ if (isset($_GET['uci'])) {
     <script>
         new DataTable('#stable');
     </script>
+    <script>
+    function copyToClipboard(link) {
+        const el = document.createElement('textarea');
+        el.value = link;
+        document.body.appendChild(el);
+        el.select();
+        document.execCommand('copy');
+        document.body.removeChild(el);
+    }
+</script>
+
 </body>
 </html>
 
