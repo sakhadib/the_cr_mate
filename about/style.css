@@ -1,0 +1,190 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800&display=swap');
+
+/* ---------- CR Mate ---------- */
+.tr-about{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.tr-abouttitle{
+    min-height: 15vh;
+    /* background-color: yellowgreen; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.tr-abouttitle h1{
+    font-family: 'Rubik', sans-serif;
+    font-size: 45px;
+    font-weight: 800;
+    color: #333;
+    margin: 0;
+}
+
+.crm-img{
+    width: 175px;
+}
+
+.tr-aboutdetails{
+    min-height: 20vh;
+
+    justify-content: center;
+    align-items: center;
+    text-align: justify;
+    padding: 20px;
+    /* background-color: blanchedalmond; */
+    font-family: 'Rubik', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    color: #333;
+}
+
+.tr-aboutdetails span{
+    font-size: 24px;
+    font-weight: 800;
+    color: #ff606e;
+}
+.tr-abtfeatures{
+    padding: 10px 50px 10px 50px;
+}
+@media(max-width: 575px){
+    .tr-abtfeatures{
+        padding: 10px 25px 10px 25px;
+    }
+
+}
+.tr-abtfeatures span{
+    font-size: 22px;
+    font-weight: 600;
+    color: #FF7A3C;
+}
+
+.spc-5{
+height: 5px;
+}
+
+.rsxcrm-img{
+    width: 110px;
+}
+.rsxnvc-img{
+    width: 200px;
+}
+
+/* ---------- Novochari ---------- */
+.tr-novochari_title{
+    min-height: 15vh;
+    /* background-color: #ff606e; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tr-novochari_title h1{
+    font-family: 'Rubik', sans-serif;
+    font-size: 45px;
+    font-weight: 800;
+    color: #333;
+    margin: 0;
+}
+
+.nvc-img{
+    width: 300px;
+    padding-bottom: 10px;
+}
+
+.tr-novochari_details{
+    min-height: 10vh;
+    justify-content: center;
+    align-items: center;
+    text-align: justify;
+    padding: 20px;
+    /* background-color: powderblue; */
+    font-family: 'Rubik', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    color: #333;
+}
+
+.tr-novochari_details p span{
+    font-size: 24px;
+    font-weight: 600px;
+}
+.sh{
+    color: #ff606e;
+}
+.tr{
+    color: #0080f0;
+}
+.tf{
+    color: #FF7A3C;
+}
+
+
+/* ---------- Team Members --------- */
+.tr-novochari_teamltitle{
+    min-height: 5vh;
+    /* background-color: #ff606e; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.tr-novochari_teamltitle h1{
+    font-family: 'Rubik', sans-serif;
+    font-size: 45px;
+    font-weight: 800;
+    color: #333;
+    margin: 0;
+}
+
+.tr-teammembers{
+    min-height: 50vh;
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    /* background-color: red; */
+    font-family: 'Rubik', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    color: #333;
+    margin: 15px 0;
+    padding: 20px 0;
+    border: 3px solid #0080f0;
+    border-radius: 25px;
+}
+
+.member-img{
+    width: 50%;
+    border: 2px solid #333;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+.name{
+    font-weight: 800;
+}
+
+.pf-btn a{
+    display: inline-flex ;
+    justify-content: center;
+    align-items: center;
+    width: 180px;
+    height: 48px;
+    position: relative;
+    font-family: 'Rubik', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+    background:#ff606e;
+    border-radius: 8px;
+    text-decoration: none;
+    letter-spacing: 1px;
+    z-index: 1;
+    overflow: hidden;
+    transition: .5s; 
+}
