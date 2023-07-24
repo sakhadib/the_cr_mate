@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800&display=swap');
+
+
+.tr-dashboard{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.tr-dash1{
+    min-height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    
+    background-color: powderblue;
+}
+
+.dash-img{
+    width: 80%;
+}
+
+.tr-wrt{
+    font-family: 'Rubik', sans-serif;
+    text-align: justify;
+    color: #333;
+    padding: 0 15px 0 15px;
+}
+.tr-wrt h1{
+    font-weight: 800;
+}
+
+.tr-wrt h1 span{
+    color: #0088ff;
+}
+
+.tr-wrt p{
+    font-size: 20px;
+}
