@@ -11,14 +11,14 @@
     
         <!-- Site Icon -->
          <!-- Favicon -->
-        <link rel="icon" type="image/png" sizes="16x16" href="rsx/1@4x.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="../rsx/1@4x.png">
         <!-- For high-resolution displays -->
-        <link rel="icon" type="image/png" sizes="32x32" href="rsx/1@4x.png">
-        <link rel="icon" type="image/png" sizes="48x48" href="rsx/1@4x.png">
-        <link rel="icon" type="image/png" sizes="64x64" href="rsx/1@4x.png">
-        <link rel="icon" type="image/png" sizes="128x128" href="rsx/1@4x.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="../rsx/1@4x.png">
+        <link rel="icon" type="image/png" sizes="48x48" href="../rsx/1@4x.png">
+        <link rel="icon" type="image/png" sizes="64x64" href="../rsx/1@4x.png">
+        <link rel="icon" type="image/png" sizes="128x128" href="../rsx/1@4x.png">
         <!-- For Internet Explorer -->
-        <link rel="icon" type="image/x-icon" href="rsx/1@4x.png">
+        <link rel="icon" type="image/x-icon" href="../rsx/1@4x.png">
         
         <!-- css -->
         <link rel="stylesheet" href="style.css">

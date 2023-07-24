@@ -55,7 +55,7 @@ if (isset($_SESSION['uci'])) {
                 // Perform any other actions after successful insertion
             } else {
                 // Insertion failed
-                echo "Error: " . mysqli_error($connection);
+                echo "Error: " . mysqli_error($conn);
                 // Handle the error as appropriate for your application
             }
 
