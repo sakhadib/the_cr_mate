@@ -70,7 +70,7 @@
     min-height: 50vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: end;
     align-items: center;
     text-align: center;
     font-family: 'Rubik', sans-serif;
@@ -80,7 +80,7 @@
     border: none;
     border-radius: 20px;
     padding: 15px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, .4);
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, .4); */
 }
 
 .tr-boximg{
@@ -112,8 +112,8 @@
     font-family: 'Rubik', sans-serif;
     font-size: 18px;
     font-weight: 600;
-    color: #333;
-    background:#ff606e;
+    color: #000000;
+    background:#c6c6c6;
     border-radius: 8px;
     text-decoration: none;
     letter-spacing: 1px;

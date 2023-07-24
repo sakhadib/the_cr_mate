@@ -1,3 +1,38 @@
+<!-- PHP -->
+<?php
+    include "../log_header.php";
+?>
+
+<?php
+    // Start the session
+    session_start();
+    $success = false;
+
+    require_once "../connection.php";
+
+    // Check if the session is active and the 'uci' session variable is set
+    if (isset($_SESSION['uci'])) {
+        $uciValue = $_SESSION['uci'];
+
+        
+        
+    }
+    else{
+        header("Location: ../login/");
+    }
+?>
+
+<?php
+    include "../close.php";
+?> 
+
+
+
+
+
+
+
+<!-- HTML -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -66,19 +101,19 @@
                             Want to make an <span>Academic Annoucement</span>? Hurry up and post the announcement for your classmates.
                         </p>
                         <div class="tr-btn">
-                            <a href="#">Form</a>
+                            <a href="../academic/">Go &nbsp;&nbsp; <i class="uil uil-message"></i></a>
                         </div>
                     </div>
                 </div>
                 <div class="col-sm-6 col-12">
                     <div class="tr-typebox">
-                        <img src="../rsx/club.png" class="tr-boximg">
+                        <img src="../rsx/club.png" class="tr-boximg" style="width: 330px;">
                         <h3 class="title">Club Announcement</h3>
                         <p class="details">
                             Want to make an <span>Club Annoucement</span>? Hurry up and post the announcement for your classmates.
                         </p>
                         <div class="tr-btn">
-                            <a href="#">Form</a>
+                            <a href="../club/">Go &nbsp;&nbsp; <i class="uil uil-message"></i></a>
                         </div>
                     </div>
                 </div>
@@ -92,24 +127,26 @@
                             Want to share a <span>Classroom Code</span>? Hurry up and share the code with your classmates.
                         </p>
                         <div class="tr-btn">
-                            <a href="#">Form</a>
+                            <a href="../classroom/">Go &nbsp;&nbsp; <i class="uil uil-message"></i></a>
                         </div>
                     </div>
                 </div>
                 <div class="col-sm-6 col-12">
                     <div class="tr-typebox">
-                        <img src="../images/files.png" class="tr-boximg">
+                        <img src="../images/files.png" class="tr-boximg" style="width: 290px;">
                         <h3 class="title">File Upload</h3>
                         <p class="details">
                             Want to share <span>Notes</span>? Hurry up and share the file with your classmates.
                         </p>
                         <div class="tr-btn">
-                            <a href="#">Form</a>
+                            <a href="../filesform/">Go &nbsp;&nbsp; <i class="uil uil-message"></i></a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+    <?php include "../footer.php"; ?>
 </body>
 </html>
