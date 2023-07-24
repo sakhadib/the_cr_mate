@@ -3,57 +3,63 @@ include "../header.php";
 ?>
 
 <?php
-// Include the connection file
-require_once "../connection.php";
+    // Include the connection file
+    require_once "../connection.php";
 
-// Start the session (if not started already)
-if (session_status() === PHP_SESSION_NONE) {
+    // Start the session (if not started already)
     session_start();
-}
 
-// Check if the form is submitted
-if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    // Get the submitted username and password
-    $username = $_POST["username"];
-    $password = $_POST["password"];
+    // Check if the form is submitted
+    if ($_SERVER["REQUEST_METHOD"] === "POST") {
+        // Get the submitted username and password
+        $username = $_POST["username"];
+        $password = $_POST["password"];
 
-    // Validate inputs (you can add more validation if required)
-    if (empty($username) || empty($password)) {
-        // Redirect back to the login page with an error message
-        header("Location: ../login/index.php?error=empty_fields");
-        exit();
-    } else {
-        // Prepare and execute a secure SELECT query
-        $sql = "SELECT uic, password FROM cr WHERE uic = ?";
-        $stmt = $conn->prepare($sql);
-        $stmt->bind_param("s", $username);
-        $stmt->execute();
-        $result = $stmt->get_result();
+        // Validate inputs (you can add more validation if required)
+        if (empty($username) || empty($password)) {
+            // Redirect back to the login page with an error message
+            header("Location: ../login/index.php?error=empty_fields");
+            exit();
+        } else {
+            // Prepare and execute a secure SELECT query
+            $sql = "SELECT uic, password FROM cr WHERE uic = ?";
+            $stmt = $conn->prepare($sql);
+            $stmt->bind_param("s", $username);
+            $stmt->execute();
+            $result = $stmt->get_result();
 
-        // Check if a user with the given UCI exists
-        if ($result->num_rows === 1) {
-            $row = $result->fetch_assoc();
-            $hashedPassword = $row["password"];
+            // Close the prepared statement to release resources
+            $stmt->close();
 
-            // Verify the password
-            if (password_verify($password, $hashedPassword)) {
-                // Password is correct, create a session and log in the user
-                $_SESSION["uci"] = $username;
-                header("Location: ../"); // Redirect to the dashboard or home page after successful login
-                exit();
+            // Check if a user with the given UCI exists
+            if ($result->num_rows === 1) {
+                $row = $result->fetch_assoc();
+                $hashedPassword = $row["password"];
+
+                // Verify the password
+                if (password_verify($password, $hashedPassword)) {
+                    // Password is correct, create a session and log in the user
+                    $_SESSION["uci"] = $username;
+                    header("Location: ../dashboard/"); // Redirect to the dashboard or home page after successful login
+                    exit();
+                } else {
+                    // Password is incorrect
+                    header("Location: ../login/index.php?error=invalid_password");
+                    exit();
+                }
             } else {
-                // Password is incorrect
-                header("Location: ../login/index.php?error=invalid_password");
+                // User with the given UCI not found
+                header("Location: ../login/index.php?error=user_not_found");
                 exit();
             }
-        } else {
-            // User with the given UCI not found
-            header("Location: ../login/index.php?error=user_not_found");
-            exit();
         }
     }
-}
 ?>
+
+<?php
+    include "../close.php";
+?>
+
 
 <!doctype html>
 <html lang="en">
