@@ -11,6 +11,8 @@
     
 }
 
+/* ---------- Section 1 ---------- */
+
 .tr-dash1{
     min-height: 60vh;
     display: flex;
@@ -42,4 +44,76 @@
 
 .tr-wrt p{
     font-size: 20px;
+}
+
+/* ---------- Section 2 ---------- */
+
+.tr-noticehead{
+    min-height: 10vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: lawngreen;
+}
+.tr-noticehead h1{
+    font-family: 'Rubik', sans-serif;
+    font-weight: 800;
+    color: #333;
+}
+.tr-noticehead h1 span{
+    color: #ff606e;
+}
+
+.tr-typebox{
+    min-height: 40vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: 'Rubik', sans-serif;
+    /* background-color: #ff606e; */
+    margin-bottom: 20px;
+    border: 2px solid #333;
+    border-radius: 20px;
+    padding: 15px;
+}
+
+.tr-boximg{
+    width: 30%;
+}
+
+.title{
+    font-weight: 700;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.details{
+    font-size: 20px;
+}
+
+.tr-btn a{
+    display: inline-flex ;
+    justify-content: center;
+    align-items: center;
+    width: 180px;
+    height: 48px;
+    position: relative;
+    font-family: 'Rubik', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+    background:#ff606e;
+    border-radius: 8px;
+    text-decoration: none;
+    letter-spacing: 1px;
+    z-index: 1;
+    overflow: hidden;
+    transition: .5s;
+}
+.tr-btn a:hover{
+    
 }
