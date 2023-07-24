@@ -1,26 +1,18 @@
+<!-- PHP -->
 <?php
     include "../log_header.php";
 ?>
 
 <?php
-// Start the session
-session_start();
-$success = false;
+    // Start the session
+    session_start();
+    $success = false;
 
-require_once "../connection.php";
+    require_once "../connection.php";
 
-// Check if the session is active and the 'uci' session variable is set
-if (isset($_SESSION['uci'])) {
-    $uciValue = $_SESSION['uci'];
-    
-    if ($_SERVER["REQUEST_METHOD"] === "POST"){
-        
-        
-        $course = $_POST["course"];
-        $teacher = $_POST["teacher"];
-        $comment = $_POST["comment"];
-        $date = $_POST["date"];
-        $message = $_POST["message"];
+    // Check if the session is active and the 'uci' session variable is set
+    if (isset($_SESSION['uci'])) {
+        $uciValue = $_SESSION['uci'];
 
         // Function to sanitize user input to prevent SQL injection and other attacks
         function sanitizeInput($input) {
@@ -33,20 +25,20 @@ if (isset($_SESSION['uci'])) {
         // Check if the form is submitted
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // Retrieve form data and sanitize it
+            $title = sanitizeInput($_POST["title"]);
             $course = sanitizeInput($_POST["course"]);
-            $teacher = sanitizeInput($_POST["teacher"]);
-            $comment = sanitizeInput($_POST["comment"]);
+            $semester = sanitizeInput($_POST["semester"]);
             $date = sanitizeInput($_POST["date"]);
-            $message = sanitizeInput($_POST["message"]);
+            $file_url = sanitizeInput($_POST["file_url"]);
 
             // Prepare the SQL statement with placeholders
-            $sql = "INSERT INTO academic (date, course, teacher, details, comment, uic) VALUES (?, ?, ?, ?, ?, ?)";
+            $sql = "INSERT INTO files (date, title, course, semester, url, uic) VALUES (?, ?, ?, ?, ?, ?)";
 
             // Create a prepared statement
             $stmt = mysqli_prepare($conn, $sql);
 
             // Bind the parameters to the prepared statement
-            mysqli_stmt_bind_param($stmt, "ssssss", $date, $course, $teacher, $message, $comment, $uciValue);
+            mysqli_stmt_bind_param($stmt, "ssssss", $date, $title, $course, $semester, $file_url, $uciValue);
 
             // Execute the prepared statement
             if (mysqli_stmt_execute($stmt)) {
@@ -58,35 +50,41 @@ if (isset($_SESSION['uci'])) {
                 echo "Error: " . mysqli_error($conn);
                 // Handle the error as appropriate for your application
             }
-
-            // Close the prepared statement and the database connection
-            mysqli_stmt_close($stmt);
-            mysqli_close($conn);
-}
-
-
+        }
+        
     }
-    
+    else{
+        header("Location: ../login/");
+    }
 
-} else {
-    // Redirect the user to index.php
-    header("Location: ../");
-    exit();
-}
+
+
+
+
 ?>
 
 <?php
     include "../close.php";
-?>
+?> 
 
-
-
+<!-- HTML -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Academic Table</title>
+    <title>File Upload</title>
+
+    <!-- Site Icon -->
+         <!-- Favicon -->
+         <link rel="icon" type="image/png" sizes="16x16" href="../rsx/1@4x.png">
+        <!-- For high-resolution displays -->
+        <link rel="icon" type="image/png" sizes="32x32" href="../rsx/1@4x.png">
+        <link rel="icon" type="image/png" sizes="48x48" href="../rsx/1@4x.png">
+        <link rel="icon" type="image/png" sizes="64x64" href="../rsx/1@4x.png">
+        <link rel="icon" type="image/png" sizes="128x128" href="../rsx/1@4x.png">
+        <!-- For Internet Explorer -->
+        <link rel="icon" type="image/x-icon" href="../rsx/1@4x.png">
 
     <!-- bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
@@ -99,58 +97,61 @@ if (isset($_SESSION['uci'])) {
     
     <!-- icons -->
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+
+    
 </head>
 <body>
-    <div class="tr-academicform">
+    <div class="tr-fileform">
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 col-12">
-                    <div class="tr-academicsection">
-                        <img src="../images/Academic.png" class="academic-image">
+                    <div class="tr-filesection">
+                        <img src="../images/files.png" class="file-image">
                     </div>
                 </div>
                 <div class="col-lg-6 col-12">
-                    <div class="tr-academicsection">
+                    <div class="tr-filesection">
                         <div class="tr-formseg">
                             <?php
                                 if ($success) {
                                     echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
-                                        <strong>Wonderful!</strong> Message Posted Successfully.
-                                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                                    </div>';
+                                            <strong>Wonderful!</strong> ' . $title . ' File Posted Successfully.
+                                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                        </div>';
                                 }
                             ?>
                             <div class="tr-greeting">
-                                <h1>Hey <span>CR</span></h1>
-                                <p>Looks like you have an interesting news about <span>Academics</span> for your fellow 
-                                    classmates. So hurry up and fill up this form sothat your classmates can get the exciting news.
+                                <h1>Hi <span>CR</span></h1>
+                                <p>Looks like you have an important <span>Notes</span> to share for your fellow 
+                                    classmates. So hurry up and fill up this form sothat your classmates can get the important notes and do great in the upcoming Quiz.
                                 </p>
                             </div>
-
-                            
     
-                            <form action="../academic/" method = "POST">
+                            <form action="../filesform/" method="POST">
                                 <div class="container">
                                     <div class="row">
+                                        <div class="col-md-6 col-12">
+                                            <input type="text" class="form-control" name="title" placeholder="Title" required>
+                                        </div>
                                         <div class="col-md-6 col-12">
                                             <input type="text" class="form-control" name="course" placeholder="Course" required>
                                         </div>
                                         <div class="col-md-6 col-12">
-                                            <input type="text" class="form-control" name="teacher" placeholder="Teacher" required>
+                                            <input type="number" class="form-control" name="semester" placeholder="Semester / year" required>
                                         </div>
                                         <div class="col-md-6 col-12">
-                                            <input type="text" class="form-control" name="comment" placeholder="Comment">
+                                            <input type="date" class="form-control" name="date" placeholder="Date" required>
                                         </div>
-                                        <div class="col-md-6 col-12">
-                                            <input type="date" class="form-control" name="date" placeholder="Date" required pattern="\d{4}-\d{2}-\d{2}" min="1900-01-01" max="9999-12-31">
-                                        </div>
-
                                         <div class="col-12">
-                                            <textarea class="form-control message-box" name="message" placeholder="Message" required cols="40" rows="6"></textarea>
+                                            <input type="url" class="form-control message-box" name="file_url" placeholder="File URL" required>
                                         </div>
-
+                                        <style>
+                                            .sh-btn{
+                                                width: 100%;
+                                            }
+                                        </style>
                                         <div class="form-button mt-3">
-                                            <button id="submit" type="submit" class="btn btn-primary">Post Message</button>
+                                            <button id="submit" type="submit" class="btn btn-success sh-btn">Load this File !</button>
                                         </div>
                                     </div>
                                 </div>
@@ -162,8 +163,6 @@ if (isset($_SESSION['uci'])) {
         </div>
     </div>
 
-    <?php
-        include "../footer.php";
-    ?>
+    <?php include "../footer.php"; ?>
 </body>
 </html>

@@ -17,11 +17,10 @@
         if ($_SERVER["REQUEST_METHOD"] === "POST"){
             
             
-            $course = $_POST["course"];
-            $teacher = $_POST["teacher"];
+            $club = $_POST["club"];
             $comment = $_POST["comment"];
-            $date = date("Y-m-d");
-            $classroom_code = $_POST["classroom_code"];
+            $date = $_POST["date"];
+            $message = $_POST["message"];
 
             // Function to sanitize user input to prevent SQL injection and other attacks
             function sanitizeInput($input) {
@@ -34,19 +33,19 @@
             // Check if the form is submitted
             if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 // Retrieve form data and sanitize it
-                $course = sanitizeInput($_POST["course"]);
-                $teacher = sanitizeInput($_POST["teacher"]);
+                $club = sanitizeInput($_POST["club"]);
                 $comment = sanitizeInput($_POST["comment"]);
-                $classroom_code = sanitizeInput($_POST["classroom_code"]);
+                $date = sanitizeInput($_POST["date"]);
+                $message = sanitizeInput($_POST["message"]);
 
                 // Prepare the SQL statement with placeholders
-                $sql = "INSERT INTO classroom (date, course, teacher, code, comment, uic) VALUES (?, ?, ?, ?, ?, ?)";
+                $sql = "INSERT INTO club (date, club, Details, comment, uic) VALUES (?, ?, ?, ?, ?)";
 
                 // Create a prepared statement
                 $stmt = mysqli_prepare($conn, $sql);
 
                 // Bind the parameters to the prepared statement
-                mysqli_stmt_bind_param($stmt, "ssssss", $date, $course, $teacher, $classroom_code, $comment, $uciValue);
+                mysqli_stmt_bind_param($stmt, "sssss", $date, $club, $message, $comment, $uciValue);
 
                 // Execute the prepared statement
                 if (mysqli_stmt_execute($stmt)) {
@@ -58,16 +57,11 @@
                     echo "Error: " . mysqli_error($conn);
                     // Handle the error as appropriate for your application
                 }
-
-                // Close the prepared statement and the database connection
-                mysqli_stmt_close($stmt);
-                mysqli_close($conn);
             }
         }
-    } else {
-        // Redirect the user to index.php
+    }
+    else{
         header("Location: ../login/");
-        exit();
     }
 ?>
 
@@ -80,14 +74,13 @@
 
 
 
-<!-- Html -->
-
+<!-- HTML -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Classroom</title>
+    <title>Club Updates</title>
 
     <!-- bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
@@ -100,6 +93,7 @@
     
     <!-- icons -->
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+
     <!-- Site Icon -->
     <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="16x16" href="../rsx/1@4x.png">
@@ -112,55 +106,54 @@
     <link rel="icon" type="image/x-icon" href="../rsx/1@4x.png">
 </head>
 <body>
-    <div class="tr-classroom">
+    <div class="tr-clubform">
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 col-12">
-                    <div class="tr-classroomsection">
-                        <img src="../images/classroom.png" class="classroom-image">
+                    <div class="tr-clubsection">
+                        <img src="../rsx/club.png" class="club-image">
                     </div>
                 </div>
                 <div class="col-lg-6 col-12">
-                    <div class="tr-classroomsection">
+                    <div class="tr-clubsection">
                         <div class="tr-formseg">
                             <?php
                                 if ($success) {
                                     echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
-                                            <strong>Wonderful!</strong> Class-code Posted Successfully.
+                                            <strong>Yoo hooo!</strong> ' . $club . ' update Posted Successfully.
                                             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                                         </div>';
                                 }
                             ?>
                             <div class="tr-greeting">
-                                <h1>Welcome <span>CR</span></h1>
-                                <p>Looks like you have an important <span>Classroom Code</span> to share for your fellow 
-                                    classmates. So hurry up and fill up this form sothat your classmates can connect themselves with the teachers as soon as possible.
+                                <h1>Hello <span>CR</span></h1>
+                                <p>Looks like you have an interesting news about <span>Club Activity</span> for your fellow 
+                                    classmates. So hurry up and fill up this form sothat your classmates can get the exciting news.
                                 </p>
                             </div>
-                            <form action="../classroom/" method="post">
+    
+                            <form action="../club/" method = "post">
                                 <div class="container">
                                     <div class="row">
-                                        <div class="col-md-6">
-                                            <input type="text" class="form-control" name="course" placeholder="Course" required>
+                                        <div class="col-12 ">
+                                            <input type="text" class="form-control" name="club" placeholder="Club Name" required>
                                         </div>
-                                        
-                                        <div class="col-md-6">
-                                            <input type="text" class="form-control" name="teacher" placeholder="Teacher" required>
+                                        <div class="col-md-6 col-12">
+                                            <input type="date" class="form-control" name="date" placeholder="Date" required>
                                         </div>
-                                        <div class="col-md-12">
-                                            <input type="text" class="form-control message-box" name="classroom_code" placeholder="Classroom Code" required>
-                                        </div>
-                                        <div class="col-md-12">
+                                        <div class="col-md-6 col-12">
                                             <input type="text" class="form-control" name="comment" placeholder="Comment">
+                                        </div>
+                                        <div class="col-12">
+                                            <input type="text" class="form-control message-box" name="message" placeholder="Message" required>
                                         </div>
                                         <style>
                                             .sh-btn{
                                                 width: 100%;
                                             }
                                         </style>
-                                        
                                         <div class="form-button mt-3">
-                                            <button id="submit" type="submit" class="btn btn-success sh-btn ">Send Classroom Code</button>
+                                            <button id="submit" type="submit" class="btn btn-success sh-btn">Post Club Update</button>
                                         </div>
                                     </div>
                                 </div>
@@ -171,6 +164,9 @@
             </div>
         </div>
     </div>
-    <?php include "../footer.php"; ?>
+
+    <?php 
+        include "../footer.php";
+    ?>
 </body>
 </html>
