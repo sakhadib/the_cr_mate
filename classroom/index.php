@@ -1,9 +1,21 @@
+<!-- PHP -->
+<?php
+    
+?>
+
+
+
+
+
+
+<!-- Html -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Academic Table</title>
+    <title>Classroom</title>
 
     <!-- bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
@@ -18,44 +30,47 @@
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
 </head>
 <body>
-    <div class="tr-academicform">
+    <div class="tr-classroom">
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 col-12">
-                    <div class="tr-academicsection">
-                        <img src="../images/Academic.png" class="academic-image">
+                    <div class="tr-classroomsection">
+                        <img src="../images/classroom.png" class="classroom-image">
                     </div>
                 </div>
                 <div class="col-lg-6 col-12">
-                    <div class="tr-academicsection">
+                    <div class="tr-classroomsection">
                         <div class="tr-formseg">
                             <div class="tr-greeting">
-                                <h1>Hey <span>CR</span></h1>
-                                <p>Looks like you have an interesting news about <span>Academics</span> for your fellow 
-                                    classmates. So hurry up and fill up this form sothat your classmates can get the exciting news.
+                                <h1>Welcome <span>CR</span></h1>
+                                <p>Looks like you have an important <span>Classroom Code</span> to share for your fellow 
+                                    classmates. So hurry up and fill up this form sothat your classmates can connect themselves with the teachers as soon as possible.
                                 </p>
                             </div>
-    
-                            <form action="#">
+                            <form action="../classroom/" method="post">
                                 <div class="container">
                                     <div class="row">
-                                        <div class="col-md-6 col-12">
-                                            <input type="text" class="form-control" name="course" placeholder="Course" required>
+                                        <div class="col-md-6">
+                                            <input type="text" class="form-control" name="course_title" placeholder="Course" required>
                                         </div>
-                                        <div class="col-md-6 col-12">
+                                        
+                                        <div class="col-md-6">
                                             <input type="text" class="form-control" name="teacher" placeholder="Teacher" required>
                                         </div>
-                                        <div class="col-md-6 col-12">
-                                            <input type="text" class="form-control" name="comment" placeholder="Comment" required>
+                                        <div class="col-md-12">
+                                            <input type="url" class="form-control message-box" name="classroom_code" placeholder="Classroom Code" required>
                                         </div>
-                                        <div class="col-md-6 col-12">
-                                            <input type="date" class="form-control" name="date" placeholder="Date" required>
+                                        <div class="col-md-12">
+                                            <input type="text" class="form-control" name="comment" placeholder="Comment">
                                         </div>
-                                        <div class="col-12">
-                                            <input type="text" class="form-control message-box" name="message" placeholder="Message" required>
-                                        </div>
+                                        <style>
+                                            .sh-btn{
+                                                width: 100%;
+                                            }
+                                        </style>
+                                        
                                         <div class="form-button mt-3">
-                                            <button id="submit" type="submit" class="btn btn-primary">Post Message</button>
+                                            <button id="submit" type="submit" class="btn btn-success sh-btn ">Send Classroom Code</button>
                                         </div>
                                     </div>
                                 </div>
