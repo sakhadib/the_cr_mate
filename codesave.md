@@ -43,3 +43,25 @@
     }
 ?>
 ```
+
+
+## For checking if it is logged in or not
+```php
+<?php
+    // Start the session
+    session_start();
+
+    // Check if the session is active and the 'uci' session variable is set
+    if (isset($_SESSION['uci'])) {
+        $uciValue = $_SESSION['uci'];
+        
+        
+
+    } else {
+        // Session is not active or 'uci' session variable is not set
+        // Redirect the user to index.php
+        header("Location: index.php");
+        exit();
+    }
+?>
+```
