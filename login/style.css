@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600&display=swap');
+
+.login-body{
+    height: 100vh;
+}
+
+.spacer{
+    height: 12px;
+}
+
+.login-btn{
+    width: 100%;
+}
+.login{
+    min-height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sh-txt{
+    font-size: 20px;
+    color: black;
+    font-weight: 500;
+}
+
+.sh-hd{
+    font-size: 50px;
+    color: #006a4e;
+    font-weight: 800;
+}
+
+.hind{
+    font-family: "Hind Siliguri", sans-serif;
+}
+
+body{
+    background-image: url(../rsx/login.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.sh-boss{
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 30px;
+    border-radius: 10px;
+}
