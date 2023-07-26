@@ -8,23 +8,21 @@
     justify-content: center;
     align-items: center;
     /* background-color: palegreen;*/
-} 
-
+}
 .tr-formholder {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    min-height: 80vh;
+    min-height: 60vh;
     /* background-color: powderblue; */
     /* max-width: 400px; */
 }
 
-.editprofile-image{
+.profile-image{
     width: 70%;
 }
-
 
 .tr-formitems{
     padding: 20px;
@@ -40,6 +38,10 @@
     font-size: 40px;
 }
 
+.tr-greeting h3 span{
+    color: #0080f0;
+}
+
 .tr-greeting p{
     font-size: 20px;
     text-align: justify;
@@ -47,10 +49,48 @@
     color: #333;
 }
 
-.form-control{
+.tr-greeting p span{
+    color: #FF7A3C;
+    font-weight: 800;
+    font-size: 24px;
+}
+
+.tr-infobox{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.title{
+    text-align: left;
+    font-size: 20px;
+    font-weight: 600;
     margin-top: 5px;
     margin-bottom: 5px;
     min-height: 40px;
+    color: #333;
+    /* background-color: #FF7A3C; */
+}
+
+.info{
+    display: flex;
+}
+.info span{
+    display: flex;
+    text-align: left;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+@media(max-width: 767px)
+{
+
+}
+
+.form-control{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    min-height: 100%;
     border: 2px solid #333;
     font-size: 18px;
     color: #333;
@@ -65,6 +105,7 @@
     border: 0px;
     box-shadow: none;
     font-size: 20px;
+    width: 100%;
     transition: all 0.3s ease;
 }
 
