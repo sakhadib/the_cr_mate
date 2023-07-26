@@ -1,6 +1,17 @@
 <!-- PHP -->
 <?php
-    include "../header.php";
+    //start the session
+    session_start();
+    if(isset($_SESSION['uci'])){
+        include "../log_header.php";
+    }
+    else{
+        include "../header.php";
+    }
+?>
+
+<?php
+    include "../close.php";
 ?>
 
 <?php
@@ -33,6 +44,8 @@
                 $teacher = $row['teacher'];
                 $comment = $row['comment'];
                 $date = $row['date'];
+
+                
             }
 
             // Free the result set
@@ -111,11 +124,15 @@
                 <!-- php file title -->
                 <h2><span>Date : </span><?php echo $date ?></h2>
                 <h6><?php echo $meta ?></h6>
-                <div class="spacer-50"></div>
-                <button id="copyButton" class="btn btn-warning" onclick="copyPageLink()">Copy notice link to share</button>
+                <button id="copyButton" class="btn btn-warning" onclick="copyPageLink()"><i class="uil uil-copy"></i> Copy notice link to share</button>
                 <div id="copyMessage" class="mt-2" style="display: none;">Link copied to clipboard!</div>
-                <div class="spacer-50"></div>
-                <h4><?php echo $details ?></h4>
+                <hr>
+                <p style = "font-size: 22px; padding-left: 30px; color: #15211d;"><?php 
+                        $details = str_replace("\\r\\n", "<br>", $details);
+                        echo $details; 
+                    ?>
+                </p>
+                <hr>
                 <div class="spacer-50"></div>
                 <p><span>Course : </span> <?php echo $course ?></p>
                 <p><span>Teacher : </span> <?php echo $teacher ?></p>

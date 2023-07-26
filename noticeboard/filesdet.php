@@ -1,6 +1,17 @@
 <!-- PHP -->
 <?php
-    include "../header.php";
+    //start the session
+    session_start();
+    if(isset($_SESSION['uci'])){
+        include "../log_header.php";
+    }
+    else{
+        include "../header.php";
+    } 
+?>
+
+<?php
+    include "../close.php";
 ?>
 
 <?php
