@@ -1,6 +1,4 @@
-<?php
-include "../header.php";
-?>
+
 
 <?php
     // Check if the cookie is already set
@@ -10,6 +8,18 @@ include "../header.php";
         $uci = $_COOKIE['uci_cookie'];
         $last = "your last searched UCI : " . $uci;
     } 
+
+    // start the session
+    session_start();
+
+    // check if the session is active and the 'uci' session variable is set
+    if (isset($_SESSION['uci'])) {
+        // redirect to dashboard
+        include "../log_header.php";
+    }
+    else{
+        include "../header.php";
+    }
 ?>
 
 
