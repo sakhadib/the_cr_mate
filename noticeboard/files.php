@@ -26,8 +26,12 @@ include "../header.php";
             while ($row = mysqli_fetch_assoc($result)) {
                 
                 $id = $row['id'];
+                $title = $row['title'];
+                if(strlen($title) > 30){
+                    $title = substr($title, 0, 60) . "...";
+                }
                 
-                $more =  '<a href="filesdet.php?uic='. $uic .'&id='. $id .'">' . $row["title"] . '</a>';
+                $more =  '<a href="filesdet.php?uic='. $uic .'&id='. $id .'">' . $title . '</a>';
 
                 // Create a new row in the table
                 $tableRows .= "<tr>";

@@ -15,6 +15,8 @@
 ?>
 
 <?php
+    $title = "";
+    
     // Include the connection.php file to establish a database connection
     require_once "connection.php";
     if (isset($_GET['uic']) && isset($_GET['id'])) {
@@ -57,9 +59,11 @@
 
             // Free the result set
             mysqli_free_result($result);
-        } else {
+        } 
+        else {
             // Query failed
-            echo "Error executing the query: " . mysqli_error($conn);
+            header("Location: ../noticeboard/");
+            exit();
         }
         if ($result2) {
             // Loop through the result set and create table rows
@@ -75,9 +79,11 @@
 
             // Free the result set
             mysqli_free_result($result2);
-        } else {
+        } 
+        else {
             // Query failed
-            echo "Error executing the query: " . mysqli_error($conn);
+            header("Location: ../noticeboard/");
+            exit();
         }
 
         // Close the database connection
@@ -124,6 +130,12 @@
         <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
 </head>
 <body>
+    <?php
+        if($title == ""){
+            header("Location: ../noticeboard/");
+            exit();
+        }
+    ?>
     <div class="sh-container">
         <div class="container shuv">
             <div class="row">
