@@ -2,7 +2,13 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800&display=swap');
 
-
+.tr-formbody{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: palegreen;*/
+} 
 
 .tr-formholder {
     display: flex;
@@ -10,16 +16,16 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-    min-height: 100vh;
-    /* background-color: powderblue; */
+    min-height: 60vh;
+    background-color: powderblue;
     /* max-width: 400px; */
 }
 
 .signup-image{
-    width: 400px;
+    width: 70%;
 }
 
-.tr-formcontent{
+/*.tr-formcontent{
     display: flex;
     position: relative;
     text-align: center;
@@ -39,9 +45,9 @@
     text-align: left;
     transition: all 0.4s ease;
     /* background-color: #ff606e; */
-    min-height: 50vh;
+    /*min-height: 50vh;
     padding: 10px;
-}
+/*}
 
  .tr-formcontent h3 {
     color: #333;
@@ -99,11 +105,11 @@
 
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active{
     /* background-color: #444749; */
-    background-color: #0088ff;
+    /*background-color: #0088ff;
     outline: none;
     border: none;
     /* scale: 1.1; */
-    box-shadow: 0 0 10px rgba(0, 0, 0, .4);
+    /*box-shadow: 0 0 10px rgba(0, 0, 0, .4);
     transition: all 0.3s ease;
 }
 
