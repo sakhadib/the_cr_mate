@@ -10,6 +10,62 @@
   }
 ?>
 
+<!-- Fetching The cr count -->
+
+<?php
+  // Include the connection.php file to establish the database connection
+  require_once 'connection.php';
+
+  // Table name
+  $tableName = 'cr';
+
+  // SQL query to get the row count of the table
+  $sql = "SELECT COUNT(*) AS row_count FROM $tableName";
+
+  // Execute the query
+  $result = $conn->query($sql);
+
+  // Check if the query was successful
+  if ($result) {
+      // Fetch the row count from the result
+      $row = $result->fetch_assoc();
+      $rowCount = $row['row_count'];
+  } else {
+      // Handle the error if the query fails
+      echo "Error: " . $conn->error;
+      $rowCount = 0;
+  }
+?>
+
+
+<!-- Fetching total notice count -->
+
+<?php
+    require_once "connection.php";
+
+    // Function to get row count for a table
+    function getRowCount($conn, $tableName) {
+        $query = "SELECT COUNT(*) as count FROM $tableName";
+        $result = $conn->query($query);
+        $row = $result->fetch_assoc();
+        return $row['count'];
+    }
+
+    // Tables in the database
+    $tables = array("academic", "club", "files", "classroom");
+
+    // Calculate the total row count for all tables
+    $totalRowCount = 0;
+    foreach ($tables as $table) {
+        $rowCount2 = getRowCount($conn, $table);
+        $totalRowCount += $rowCount2;
+    }
+    // Close the database connection
+    $conn->close();
+?>
+
+
+
 <!-- HTML -->
 <!DOCTYPE html>
 <html lang="en">
@@ -79,12 +135,6 @@
         </div>
       </nav>
     <!-- Navbar End -->
-    <?php
-      echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
-              <strong>For your personalization</strong> of this website we use 1 cookie of your uci after your first search.
-              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="close"></button>
-          </div>'
-    ?>
 
     <div class="container ">
         <div class="row sh-cnter">
@@ -104,13 +154,56 @@
                 </div>
                 
             </div>
+            <?php
+              if(!isset($_COOKIE['uci_cookie'])){
+                echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
+                      <strong>For your personalization</strong> of this website we use 1 cookie of your uci after your first search.
+                      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="close"></button>
+                  </div>';
+              }
+            ?> 
         </div>
+    </div>
+
+    <style>
+      .sh-tot{
+        background-color: rgb(245, 245, 245);
+        /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); */
+        padding: 20px;
+        padding-left: 0;
+        padding-right: 0;
+        border-radius: 10px;
+        box-sizing: border-box;
+      }
+      .bignum{
+        font-size: 60px;
+        font-family: "Poppins", sans-serif;
+        font-weight: 700;
+        color: #dd6969;
+      }
+      .spacer{
+        height: 20px;
+      }
+    </style>
+
+    <div class="container">
+      <div class="row sh-tot">
+        <div class="col-lg-4 col-12 d-flex justify-content-start align-items-center flex-column offset-lg-2">
+          <p class="bignum"><?php echo $rowCount; ?></p>
+          <p class="smalltxt">CRs registered with us</p>
+        </div>
+        <div class="col-lg-4 col-12 d-flex justify-content-start align-items-center flex-column">
+          <p class="bignum"><?php echo $totalRowCount; ?></p>
+          <p class="smalltxt">Notices Managed</p>
+        </div>
+      </div>
     </div>
 
     <!-- Step Guide -->
 
     <div class="container">
-        
+        <div class="spacer"></div>
+        <div class="spacer"></div>
         <div class="row">
             <div class="col-12">
                 <h1 class="text-center">Its only 3 steps to get started</h1>
