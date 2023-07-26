@@ -15,16 +15,16 @@
               <li class="nav-item">
                 <a class="nav-link" href="../noticeboard/">NoticeBoard</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Standing</a>
-              </li>
               
               <li class="nav-item">
                 <a class="nav-link" href="../about/">About us</a>
               </li>
             </ul>
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                <li class="nav-item">
+              <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="../editprofile/">Edit Profile</a>
+                </li>    
+              <li class="nav-item">
                     <a class="nav-link" aria-current="page" href="../logout.php">Logout</a>
                 </li>
             </ul>            

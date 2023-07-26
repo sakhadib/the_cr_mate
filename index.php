@@ -115,9 +115,6 @@
               <li class="nav-item">
                 <a class="nav-link" href="noticeboard/">NoticeBoard</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Standing</a>
-              </li>
               
               <li class="nav-item">
                 <a class="nav-link" href="#">About us</a>

@@ -61,7 +61,7 @@ include "../header.php";
                                                 <div class="invalid-feedback">Department field cannot be blank!</div>
                                             </div>
                                             <div class="col-md-12">
-                                                <input type="text" class="form-control" name="univ_id" placeholder="Yoour Student ID" required>
+                                                <input type="text" class="form-control" name="univ_id" placeholder="Your Student ID" required>
                                                 <div class="valid-feedback">Department field is valid!</div>
                                                 <div class="invalid-feedback">Department field cannot be blank!</div>
                                             </div>
