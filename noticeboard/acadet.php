@@ -15,6 +15,7 @@
 ?>
 
 <?php
+    $details = "";
     // Include the connection.php file to establish a database connection
     require_once "connection.php";
     if (isset($_GET['uic']) && isset($_GET['id'])) {
@@ -117,6 +118,12 @@
         <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
 </head>
 <body>
+    <?php
+        if($details == ""){
+            header("Location: ../noticeboard/");
+            exit();
+        }
+    ?>
     <div class="container shuv">
         <div class="row">
             <div class="col-12">

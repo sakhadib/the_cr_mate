@@ -23,7 +23,7 @@
         $id = $_GET['id'];
 
         // Query to fetch the rows matching the provided 'uic' and 'id'
-        $query = "SELECT date, club, Details, comment FROM club WHERE uic = '$uic' AND id = '$id'";
+        $query = "SELECT date, club, Details, type, comment FROM club WHERE uic = '$uic' AND id = '$id'";
         // Execute the query
         $result = mysqli_query($conn, $query);
         // Initialize the $tableRows variable
@@ -41,6 +41,7 @@
                 // Create a new row in the table
                 $club = $row['club'];
                 $details = $row['Details'];
+                $type = $row['type'];
                 $comment = $row['comment'];
                 $date = $row['date'];
             }
@@ -119,17 +120,18 @@
             <div class="col-12">
                 <div class="spacer-50"></div>
                 <!-- php file title -->
-                <h2><span>Date : </span><?php echo $date ?></h2>
-                <h6><?php echo $meta ?></h6>
+                <h2><span>Date : </span><?php echo $date; ?></h2>
+                <h6><?php echo $meta; ?></h6>
+                <button id="copyButton" class="btn btn-warning" onclick="copyPageLink()"><i class="uil uil-copy"></i>  Copy notice link to share</button>
+                <div id="copyMessage" class="mt-2" style="display: none;"><i class="uil uil-copy"></i> Link copied to clipboard!</div>
+                <hr>
                 <div class="spacer-50"></div>
-                <button id="copyButton" class="btn btn-warning" onclick="copyPageLink()">Copy notice link to share</button>
-                <div id="copyMessage" class="mt-2" style="display: none;">Link copied to clipboard!</div>
-                <div class="spacer-50"></div>
+                <h5><span class="badge bg-success"><?php echo $type; ?></span></h5>
                 <h4><?php echo $details ?></h4>
                 <div class="spacer-50"></div>
-                <p><span>Society / Club : </span> <?php echo $club ?></p>
                 <hr>
-                <p><span>Comment : </span> <?php echo $comment ?></p>
+                <p><span>Society / Club : </span> <?php echo $club; ?></p>
+                <p><span>Comment : </span> <?php echo $comment; ?></p>
             </div>
         </div>
     </div>

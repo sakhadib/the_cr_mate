@@ -4,66 +4,70 @@
 ?>
 
 <?php
-    // Start the session
-    session_start();
-    $success = false;
+// Start the session
+session_start();
+$success = false;
 
-    require_once "../connection.php";
+require_once "../connection.php";
 
-    // Check if the session is active and the 'uci' session variable is set
-    if (isset($_SESSION['uci'])) {
-        $uciValue = $_SESSION['uci'];
-        
-        if ($_SERVER["REQUEST_METHOD"] === "POST"){
-            
-            
-            $club = $_POST["club"];
-            $comment = $_POST["comment"];
-            $date = $_POST["date"];
-            $message = $_POST["message"];
+// Check if the session is active and the 'uci' session variable is set
+if (isset($_SESSION['uci'])) {
+    $uciValue = $_SESSION['uci'];
 
-            // Function to sanitize user input to prevent SQL injection and other attacks
-            function sanitizeInput($input) {
-                // Use your preferred method for sanitization, such as mysqli_real_escape_string or htmlspecialchars
-                // Here, I'll use mysqli_real_escape_string as an example:
-                global $conn;
-                return mysqli_real_escape_string($conn, $input);
+    // Function to sanitize user input to prevent SQL injection and other attacks
+    function sanitizeInput($input)
+    {
+        // Use your preferred method for sanitization, such as mysqli_real_escape_string or htmlspecialchars
+        // Here, I'll use mysqli_real_escape_string as an example:
+        global $conn;
+        return mysqli_real_escape_string($conn, $input);
+    }
+
+    // Check if the form is submitted
+    if ($_SERVER["REQUEST_METHOD"] === "POST") {
+        // Ensure the form data is present and not empty
+        if (isset($_POST["club"], $_POST["comment"], $_POST["date"], $_POST["message"], $_POST["option"])) {
+            // Retrieve form data and sanitize it
+            $club = sanitizeInput($_POST["club"]);
+            $comment = sanitizeInput($_POST["comment"]);
+            $date = sanitizeInput($_POST["date"]);
+            $message = sanitizeInput($_POST["message"]);
+            $selectedOption = sanitizeInput($_POST['option']);
+
+            // Prepare the SQL statement with placeholders
+            $sql = "INSERT INTO club (date, club, type, Details, comment, uic) VALUES (?, ?, ?, ?, ?, ?)";
+
+            // Create a prepared statement
+            $stmt = mysqli_prepare($conn, $sql);
+
+            // Check if the prepared statement was created successfully
+            if ($stmt === false) {
+                die("Prepared statement preparation failed: " . mysqli_error($conn));
             }
 
-            // Check if the form is submitted
-            if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                // Retrieve form data and sanitize it
-                $club = sanitizeInput($_POST["club"]);
-                $comment = sanitizeInput($_POST["comment"]);
-                $date = sanitizeInput($_POST["date"]);
-                $message = sanitizeInput($_POST["message"]);
+            // Bind the parameters to the prepared statement
+            mysqli_stmt_bind_param($stmt, "ssssss", $date, $club, $selectedOption, $message, $comment, $uciValue);
 
-                // Prepare the SQL statement with placeholders
-                $sql = "INSERT INTO club (date, club, Details, comment, uic) VALUES (?, ?, ?, ?, ?)";
-
-                // Create a prepared statement
-                $stmt = mysqli_prepare($conn, $sql);
-
-                // Bind the parameters to the prepared statement
-                mysqli_stmt_bind_param($stmt, "sssss", $date, $club, $message, $comment, $uciValue);
-
-                // Execute the prepared statement
-                if (mysqli_stmt_execute($stmt)) {
-                    // Insertion successful
-                    $success = true;
-                    // Perform any other actions after successful insertion
-                } else {
-                    // Insertion failed
-                    echo "Error: " . mysqli_error($conn);
-                    // Handle the error as appropriate for your application
-                }
+            // Execute the prepared statement
+            if (mysqli_stmt_execute($stmt)) {
+                // Insertion successful
+                $success = true;
+            } else {
+                // Insertion failed
+                echo "Error: " . mysqli_error($conn);
+                // Handle the error as appropriate for your application
             }
+
+            // Close the prepared statement
+            mysqli_stmt_close($stmt);
+        } else {
+            echo "Error: All form fields are required.";
+            // Handle the missing form data as appropriate for your application
         }
     }
-    else{
-        header("Location: ../login/");
-    }
+}
 ?>
+
 
 <?php
     include "../close.php";
@@ -145,7 +149,26 @@
                                             <input type="text" class="form-control" name="comment" placeholder="Comment">
                                         </div>
                                         <div class="col-12">
-                                            <input type="text" class="form-control message-box" name="message" placeholder="Message" required>
+                                            <textarea class="form-control message-box" name="message" placeholder="Message" required cols="40" rows="6"></textarea>
+                                        </div>
+                                        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                            <input type="radio" class="btn-check" name="option" id="academic" value="seminar" autocomplete="off" required>
+                                            <label class="btn btn-sm btn-outline-secondary" for="academic">Seminar</label>
+
+                                            <input type="radio" class="btn-check" name="option" id="club" value="fest" autocomplete="off" required>
+                                            <label class="btn btn-sm btn-outline-secondary" for="club">Fest</label>
+
+                                            <input type="radio" class="btn-check" name="option" id="files" value="competition" autocomplete="off" required>
+                                            <label class="btn btn-sm btn-outline-secondary" for="files">Competition</label>
+
+                                            <input type="radio" class="btn-check" name="option" id="classroom" value="fund-rising" autocomplete="off" required>
+                                            <label class="btn btn-sm btn-outline-secondary" for="classroom">Fund Rising</label>
+
+                                            <input type="radio" class="btn-check" name="option" id="classroom" value="recruitment" autocomplete="off" required>
+                                            <label class="btn btn-sm btn-outline-secondary" for="classroom">Recruitment</label>
+
+                                            <input type="radio" class="btn-check" name="option" id="classroom" value="others" autocomplete="off" required>
+                                            <label class="btn btn-sm btn-outline-secondary" for="classroom">other</label>
                                         </div>
                                         <style>
                                             .sh-btn{
