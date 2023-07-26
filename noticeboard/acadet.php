@@ -129,6 +129,7 @@
                 <hr>
                 <p style = "font-size: 22px; padding-left: 30px; color: #15211d;"><?php 
                         $details = str_replace("\\r\\n", "<br>", $details);
+                        $details = str_replace("\\'", "'", $details);
                         echo $details; 
                     ?>
                 </p>

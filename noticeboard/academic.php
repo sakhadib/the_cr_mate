@@ -27,13 +27,22 @@ if (isset($_GET['uci'])) {
         while ($row = mysqli_fetch_assoc($result)) {
             // Create a new row in the table
             $id = $row['id'];
+            $details = $row['details'];
+            if (strlen($details) > 30) {
+                // Truncate the content to the first 30 characters and add "..." at the end
+                $details = substr($details, 0, 100) . "...";
+            }
+            $details = str_replace("\\r\\n", "", $details);
+            $details = str_replace("\\'", "'", $details);
 
             $tableRows .= "<tr>";
             $tableRows .= "<td>" . $row['date'] . "</td>";
             $tableRows .= "<td>" . $row['course'] . "</td>";
-            $tableRows .= "<td>" . $row['details'] . "</td>";
+            $tableRows .= "<td>" . $details . "</td>";
             $tableRows .= "<td>" . '<a href="acadet.php?uic='. $uic .'&id='. $id .'">Details</a> ' . "</td>";
             $tableRows .= "</tr>";
+
+            
         }
 
         // Free the result set
