@@ -79,7 +79,12 @@
         </div>
       </nav>
     <!-- Navbar End -->
-
+    <?php
+      echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
+              <strong>For your personalization</strong> of this website we use 1 cookie of your uci after your first search.
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="close"></button>
+          </div>'
+    ?>
 
     <div class="container ">
         <div class="row sh-cnter">
