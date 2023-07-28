@@ -11,22 +11,22 @@
         // Retrieve the variables from the form submission
         $user = $_POST["username"];
         $email = $_POST["email"];
-        $password = $_POST["password"];
+        $pass = $_POST["password"];
         $confirm_password = $_POST["c_password"];
 
 
         // Password validation
-        if (strlen($password) < 8) {
+        if (strlen($pass) < 8) {
             header("Location: ../admin/?warning=Password must be at least 8 characters long");
             exit;
         }
 
-        if ($password !== $confirm_password) {
+        if ($pass !== $confirm_password) {
             header("Location: ../admin/?warning=Passwords do not match");
             exit;
         }
 
-        if (isWeakPassword($password)) {
+        if (isWeakPassword($pass)) {
             header("Location: ../admin/?warning=Weak password, please choose a stronger one");
             exit;
         }
@@ -54,7 +54,7 @@
         $stmt = $conn->prepare("INSERT INTO shadmin (username, email, password) VALUES (?, ?, ?)");
 
         // Hash the password for security before storing in the database
-        $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+        $hashed_password = password_hash($pass, PASSWORD_DEFAULT);
 
         // Bind the parameters and execute the statement
         $stmt->bind_param("sss", $user, $email, $hashed_password);

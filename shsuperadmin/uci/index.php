@@ -3,9 +3,9 @@
     session_start();
     include_once '../../connection.php';
 
-    // if(!isset($_SESSION['admin'])){
-    //     header("Location: ../../index.php");
-    // }
+    if(!isset($_SESSION['admin'])){
+        header("Location: ../../");
+    }
     $uic = 'xxx';
     $tableRows = "";
 

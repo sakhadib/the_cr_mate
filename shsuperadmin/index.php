@@ -1,4 +1,8 @@
 <?php
+include "../header.php";
+?>
+
+<?php
     // Include the connection file
     require_once "../connection.php";
 
@@ -9,7 +13,7 @@
     if ($_SERVER["REQUEST_METHOD"] === "POST") {
         // Get the submitted username and password
         $username = $_POST["username"];
-        $password = $_POST["password"];
+        $password = trim($_POST["password"]);
 
         // Validate inputs (you can add more validation if required)
         if (empty($username) || empty($password)) {
@@ -57,8 +61,7 @@
 ?>
 
 
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -71,14 +74,14 @@
     
         <!-- Site Icon -->
          <!-- Favicon -->
-        <link rel="icon" type="image/png" sizes="16x16" href="../rsx/1@4x.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="rsx/1@4x.png">
         <!-- For high-resolution displays -->
-        <link rel="icon" type="image/png" sizes="32x32" href="../rsx/1@4x.png">
-        <link rel="icon" type="image/png" sizes="48x48" href="../rsx/1@4x.png">
-        <link rel="icon" type="image/png" sizes="64x64" href="../rsx/1@4x.png">
-        <link rel="icon" type="image/png" sizes="128x128" href="../rsx/1@4x.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="rsx/1@4x.png">
+        <link rel="icon" type="image/png" sizes="48x48" href="rsx/1@4x.png">
+        <link rel="icon" type="image/png" sizes="64x64" href="rsx/1@4x.png">
+        <link rel="icon" type="image/png" sizes="128x128" href="rsx/1@4x.png">
         <!-- For Internet Explorer -->
-        <link rel="icon" type="image/x-icon" href="../rsx/1@4x.png">
+        <link rel="icon" type="image/x-icon" href="rsx/1@4x.png">
         
         <!-- css -->
         <link rel="stylesheet" href="style.css">
@@ -87,12 +90,32 @@
         <!-- icons -->
         <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
 </head>
-<body>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-4 offset-lg-4 col-12 sh-center">
-                <div class="sh-boss" style="width: 100%;">
+<body class="login-body">
+    <!-- Main Login -->
+      <div class="login">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 col-12 d-flex flex-column justify-content-center align-items-center sh-boss">
                     <div class="wrap">
+                        <p class="sh-hd hind text-danger">Log In</p>
+                        <p class="sh-txt hind">Login with your UCI and Password. Please do not share your password 
+                            with anyone else.
+                        </p>
+
+                        <form action="../shsuperadmin/" method="post">
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control" id="floatingInput" placeholder="abc" name="username">
+                                <label for="floatingInput">UCI</label>
+                              </div>
+                              <div class="form-floating">
+                                <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="password">
+                                <label for="floatingPassword">Password</label>
+                              </div>
+                              <div class="spacer"></div>
+                              <button type="submit" class="btn btn-danger align-right hind login-btn" >Login</button>
+                        </form>
+                    </div>
+
                     <?php
                         if (isset($_GET["error"])) {
                             switch ($_GET["error"]) {
@@ -120,37 +143,14 @@
                             }
                         }
                     ?>
-                    </div>
-                    <div class="wrap">
-                        <p class="sh-hd hind text-success text-center">admin login</p>
-                        <hr>
-                        <form action="../shsuperadmin/" method="post">
-                            <div class="form-floating mb-3">
-                                <input type="text" class="form-control" id="floatingInput" placeholder="abc" name="username" required>
-                                <label for="floatingInput">username</label>
-                            </div>
-                            <div class="form-floating">
-                                <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="password" required>
-                                <label for="floatingPassword">Password</label>
-                            </div>
-                            <div class="spacer"></div>
-                            <button type="submit" class="btn btn-success align-right hind login-btn" >Login</button>
-                        </form>
-                    </div>
                 </div>
+
             </div>
         </div>
-    </div>
-    <div class="container">
-        <div class="row">
-            <div class="col-12 foot-list">
-                <ul>
-                    <li><a href="../">CR mate</a></li>
-                    <li><a href="../about/">About</a></li>
-                    <li><a href="mailto:novochari.technology@gmail.com">Contact</a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
+      </div>
+    <!-- Main Login end -->
+    <?php
+        include "../footer.php";
+    ?>
 </body>
 </html>
