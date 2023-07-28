@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Borel&display=swap');
+
+*{
+    font-family: "Poppins", sans-serif;
+    /* font-family: 'Borel', cursive; */
+}
+
+.sh-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 95vh;
+}
+
+.sh-boss{
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.sh-hd{
+    font-size: 40px;
+    color: #006a4e;
+    font-weight: 800;
+    font-family: 'Borel', cursive;
+}
+
+.spacer{
+    height: 20px;
+}
+.login-btn{
+    width: 100%;
+}
+
+.foot-list{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    padding: 0;
+}
+
+.foot-list ul{
+    padding: 0;
+}
+
+.foot-list ul li{
+    display: inline-block;
+    list-style: none;
+    padding: 0 10px;
+}
+
+.foot-list ul li a{
+    color: gray;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.foot-list ul li a:hover{
+    color: #000000;
+    text-decoration: underline;
+}

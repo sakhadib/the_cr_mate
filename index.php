@@ -10,6 +10,12 @@
   }
 ?>
 
+<?php
+  if(isset($_COOKIE['uci_cookie'])){
+    header("Location: noticeboard/");
+  }
+?>
+
 <!-- Fetching The cr count -->
 
 <?php
