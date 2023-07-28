@@ -1,4 +1,101 @@
+<!-- PHP -->
 
+<?php
+    session_start();
+    include_once '../../connection.php';
+
+    // if(!isset($_SESSION['admin'])){
+    //     header("Location: ../../index.php");
+    // }
+
+    // --------------------------------------------------------- Getting cr count
+    $sql_cr = "SELECT COUNT(*) AS row_count FROM cr";
+
+    // Execute the query
+    $result_cr = $conn->query($sql_cr);
+  
+    // Check if the query was successful
+    if ($result_cr) {
+        // Fetch the row count from the result
+        $row_cr = $result_cr->fetch_assoc();
+        $rowCount_cr = $row_cr['row_count'];
+    } else {
+        // Handle the error if the query fails
+        echo "Error: " . $conn->error;
+        $rowCount_cr = 0;
+    }
+
+
+    // --------------------------------------------------------- Getting total notice count
+
+    // Function to get row count for a table
+    function getRowCount($conn, $tableName) {
+        $query_not = "SELECT COUNT(*) as count FROM $tableName";
+        $result_not = $conn->query($query_not);
+        $row_not = $result_not->fetch_assoc();
+        return $row_not['count'];
+    }
+    
+    // Tables in the database
+    $tables = array("academic", "club", "files", "classroom");
+    
+    // Calculate the total row count for all tables and store individual counts in separate variables
+    $totalRowCount_not = 0;
+    foreach ($tables as $table) {
+        ${$table . '_ct'} = getRowCount($conn, $table);
+        $totalRowCount_not += ${$table . '_ct'};
+    }
+
+
+
+
+    // --------------------------------------------------------- Getting individual count
+    if ($_SERVER["REQUEST_METHOD"] === "GET") {
+        if (isset($_GET["uci"])) {
+            $uci = $_GET["uci"];
+
+            // SQL query to get the row count of the table
+            function getRowCountWithUCI($conn, $tableName_uci, $uci) {
+                $uci = $conn->real_escape_string($uci); // To prevent SQL injection
+            
+                // Use WHERE clause to filter rows based on the 'uci' column
+                $query = "SELECT COUNT(*) as count FROM $tableName_uci WHERE uic = '$uci'";
+                $result = $conn->query($query);
+                $row = $result->fetch_assoc();
+                return $row['count'];
+            }
+            
+            // Assuming you already have a $conn object for database connection.
+            
+            // Tables in the database
+            $tables_uci = array("academic", "club", "files", "classroom");
+            
+            // Calculate the total row count for all tables with the given uci value and store individual counts in separate variables
+            $totalRowCountWithUCI = 0;
+            foreach ($tables_uci as $table_uci) {
+                ${$table_uci . '_ctu'} = getRowCountWithUCI($conn, $table_uci, $uci);
+                $totalRowCountWithUCI += ${$table_uci . '_ctu'};
+            }
+            
+
+        }
+    }
+
+?>
+
+
+
+
+
+
+<?php
+    // Close the database connection
+    $conn->close();
+?>
+
+
+
+<!-- HTML -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -44,13 +141,13 @@
     <div class="container">
         <div class="row sh-tot">
           <div class="col-lg-4 col-12 d-flex justify-content-start align-items-center flex-column offset-lg-2">
-            <!-- <p class="bignum"><?php echo $rowCount; ?></p> -->
-            <p class="bignum">15</p>
+            <p class="bignum"><?php echo $rowCount_cr; ?></p>
+            <!-- <p class="bignum">15</p> -->
             <p class="smalltxt">CRs registered with us</p>
           </div>
           <div class="col-lg-4 col-12 d-flex justify-content-start align-items-center flex-column">
-            <!-- <p class="bignum"><?php echo $totalRowCount; ?></p> -->
-            <p class="bignum">2245</p>
+            <p class="bignum"><?php echo $totalRowCount_not; ?></p>
+            <!-- <p class="bignum">2245</p> -->
             <p class="smalltxt">Notices Managed</p>
           </div>
         </div>
@@ -63,23 +160,23 @@
     <div class="container">
         <div class="row sh-tot">
           <div class="col-lg-3 col-12 d-flex justify-content-start align-items-center flex-column">
-            <!-- <p class="bignum"><?php echo $rowCount; ?></p> -->
-            <p class="bignum-2">45</p>
+            <p class="bignum-2"><?php echo $academic_ct; ?></p>
+            <!-- <p class="bignum-2">45</p> -->
             <p class="smalltxt">Academic news</p>
           </div>
           <div class="col-lg-3 col-12 d-flex justify-content-start align-items-center flex-column">
-            <!-- <p class="bignum"><?php echo $totalRowCount; ?></p> -->
-            <p class="bignum-2">21</p>
+            <p class="bignum-2"><?php echo $files_ct; ?></p>
+            <!-- <p class="bignum-2">21</p> -->
             <p class="smalltxt">Files shared</p>
           </div>
           <div class="col-lg-3 col-12 d-flex justify-content-start align-items-center flex-column">
-            <!-- <p class="bignum"><?php echo $totalRowCount; ?></p> -->
-            <p class="bignum-2">34</p>
+            <p class="bignum-2"><?php echo $club_ct; ?></p>
+            <!-- <p class="bignum-2">34</p> -->
             <p class="smalltxt">Club news</p>
           </div>
           <div class="col-lg-3 col-12 d-flex justify-content-start align-items-center flex-column">
-            <!-- <p class="bignum"><?php echo $totalRowCount; ?></p> -->
-            <p class="bignum-2">30</p>
+            <p class="bignum-2"><?php echo $classroom_ct; ?></p>
+            <!-- <p class="bignum-2">30</p> -->
             <p class="smalltxt">Classroom code</p>
           </div>
         </div>
@@ -98,7 +195,7 @@
                 </div>
             </div>
             <div class="col-lg-7 col-12 chart-container">
-                <form action="noticetable.php" method="POST" class="form-inline" style="width: 100%;">
+                <form action="../dashboard/" method="GET" class="form-inline" style="width: 60%;">
                     <div class="input-group mb-3">
                         <input type="text" class="form-control" placeholder="UCI" name = "uci" aria-label="uci" aria-describedby="button-addon2">
                         <button class="btn btn-danger" type="submit" id="button-addon2"><i class="uil uil-search"></i></button>
@@ -128,7 +225,8 @@
                 'Classroom',
                 'Filse shared'
             ],
-            data: [45, 34, 30, 21],
+            // data: [45, 34, 30, 21],
+            <?php echo 'data: ['. $academic_ct .', '. $club_ct .', '. $classroom_ct .', '. $files_ct .']' ?>
         }
 
         new Chart(newspi, {
@@ -161,16 +259,16 @@
                 'Classroom',
                 'Filse shared'
             ],
-            data: [45, 34, 30, 21],
+            <?php echo 'data: ['. $academic_ctu .', '. $club_ctu .', '. $classroom_ctu .', '. $files_ctu .']' ?>
         }
 
         new Chart(newspi2, {
             type: 'doughnut',
             data: {
-                labels: newspiData.labels,
+                labels: newspiData2.labels,
                 datasets: [{
-                    label: 'News Pi',
-                    data: newspiData.data,
+                    label: '<?php echo $uci ?>',
+                    data: newspiData2.data,
                     backgroundColor: [
                         '#FF6384',
                         '#36A2EB',
