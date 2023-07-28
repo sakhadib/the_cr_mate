@@ -1,12 +1,18 @@
 <?php
-    if($_SERVER['REQUEST_METHOD'] === 'POST'){
+    // Include the connection file
+    require_once "../connection.php";
+
+    // Start the session (if not started already)
+    session_start();
+
+    // Check if the form is submitted
+    if ($_SERVER["REQUEST_METHOD"] === "POST") {
+        // Get the submitted username and password
         $username = $_POST["username"];
         $password = $_POST["password"];
 
-        require_once '../connection.php';
-
         // Validate inputs (you can add more validation if required)
-        if ($username == '' || $password == '') {
+        if (empty($username) || empty($password)) {
             // Redirect back to the login page with an error message
             header("Location: ../shsuperadmin/index.php?error=empty_fields");
             exit();
@@ -27,9 +33,9 @@
                 $hashedPassword = $row["password"];
 
                 // Verify the password
-                if ($password == $hashedPassword) {
+                if (password_verify($password, $hashedPassword)) {
                     // Password is correct, create a session and log in the user
-                    $_SESSION["username"] = $username;
+                    $_SESSION["uci"] = $username;
                     header("Location: dashboard/"); // Redirect to the dashboard or home page after successful login
                     exit();
                 } else {
@@ -44,6 +50,10 @@
             }
         }
     }
+?>
+
+<?php
+    include "../close.php";
 ?>
 
 
