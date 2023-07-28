@@ -4,9 +4,9 @@
     session_start();
     include_once '../../connection.php';
 
-    // if(!isset($_SESSION['admin'])){
-    //     header("Location: ../../index.php");
-    // }
+    if(!isset($_SESSION['admin'])){
+        header("Location: ../../index.php");
+    }
 
     // --------------------------------------------------------- Getting cr count
     $sql_cr = "SELECT COUNT(*) AS row_count FROM cr";

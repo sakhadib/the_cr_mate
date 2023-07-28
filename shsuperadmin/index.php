@@ -35,7 +35,7 @@
                 // Verify the password
                 if (password_verify($password, $hashedPassword)) {
                     // Password is correct, create a session and log in the user
-                    $_SESSION["uci"] = $username;
+                    $_SESSION["admin"] = $username;
                     header("Location: dashboard/"); // Redirect to the dashboard or home page after successful login
                     exit();
                 } else {
@@ -128,13 +128,13 @@
                             <div class="form-floating mb-3">
                                 <input type="text" class="form-control" id="floatingInput" placeholder="abc" name="username" required>
                                 <label for="floatingInput">username</label>
-                              </div>
-                              <div class="form-floating">
+                            </div>
+                            <div class="form-floating">
                                 <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="password" required>
                                 <label for="floatingPassword">Password</label>
-                              </div>
-                              <div class="spacer"></div>
-                              <button type="submit" class="btn btn-success align-right hind login-btn" >Login</button>
+                            </div>
+                            <div class="spacer"></div>
+                            <button type="submit" class="btn btn-success align-right hind login-btn" >Login</button>
                         </form>
                     </div>
                 </div>
