@@ -20,10 +20,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Add your database connection details
 
         require_once "../connection.php";
+        $uic_val = "xxx";
 
         // Prepare and execute the SQL query to insert data into the "cr" table
-        $sql = "INSERT INTO cr (name, univ_id, batch, department, university, password, email)
-                VALUES ('$name', '$univ_id', '$batch', '$department', '$university', '$hashed_password', '$email')";
+        $sql = "INSERT INTO cr (name, univ_id, batch, department, university, password, email, uic)
+                VALUES ('$name', '$univ_id', '$batch', '$department', '$university', '$hashed_password', '$email', '$uic_val')";
 
         if (mysqli_query($conn, $sql)) {
             header("Location: success.php");

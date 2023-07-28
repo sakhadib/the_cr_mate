@@ -91,6 +91,9 @@
 <?php
     // Close the database connection
     $conn->close();
+
+    // Include the header
+    include '../header.php';
 ?>
 
 
@@ -194,6 +197,10 @@
                     <canvas id="newspi"></canvas>
                 </div>
             </div>
+            <div class="d-lg-none d-block">
+            <div class="spacer"></div>
+            <div class="spacer"></div>
+            </div>
             <div class="col-lg-7 col-12 chart-container">
                 <form action="../dashboard/" method="GET" class="form-inline" style="width: 60%;">
                     <div class="input-group mb-3">
@@ -207,9 +214,14 @@
             </div>
         </div>
     </div>
+    <div class="spacer"></div>
+    <div class="spacer"></div>
+    <div class="spacer"></div>
 
 
-
+    <?php
+        include "../footer.php"
+    ?>
 
 
 
@@ -234,7 +246,7 @@
             data: {
                 labels: newspiData.labels,
                 datasets: [{
-                    label: 'News Pi',
+                    
                     data: newspiData.data,
                     backgroundColor: [
                         '#FF6384',
