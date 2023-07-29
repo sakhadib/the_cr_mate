@@ -114,7 +114,7 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <p class = 'text-center'><span class="badge bg-primary" style = "font-size: 25px; font-weight: 500;">CRs who didn't got their UCI yet</span></p>
+                <p class = 'text-center'><span class="badge bg-secondary" style = "font-size: 25px; font-weight: 500;">CRs who didn't got their UCI yet</span></p>
             </div>
         </div>
     </div>

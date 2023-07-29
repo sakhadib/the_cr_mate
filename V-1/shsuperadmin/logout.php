@@ -9,6 +9,6 @@ $_SESSION = array();
 session_destroy();
 
 // Redirect to a login page or any other desired page after logout
-header("Location: ../");
+header("Location: ../shsuperadmin/");
 exit();
 ?>

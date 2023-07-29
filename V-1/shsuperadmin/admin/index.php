@@ -1,5 +1,12 @@
 <!-- PHP -->
 <?php
+    // start the session
+    session_start();
+    if(!isset($_SESSION["admin"])){
+        header("Location: ../../index.php");
+    }
+    
+    
     function isWeakPassword($password){
         // Implement your own logic to check for weak or common passwords.
         // For example, you can check against a list of common passwords or use regex patterns.

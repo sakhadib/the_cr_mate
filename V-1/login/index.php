@@ -73,7 +73,7 @@ include "../header.php";
         <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
     
         <!-- Site Icon -->
-         <!-- Favicon -->
+        <!-- Favicon -->
         <link rel="icon" type="image/png" sizes="16x16" href="rsx/1@4x.png">
         <!-- For high-resolution displays -->
         <link rel="icon" type="image/png" sizes="32x32" href="rsx/1@4x.png">
