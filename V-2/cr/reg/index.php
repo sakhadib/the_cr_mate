@@ -51,21 +51,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             // Execute the insert statement
             if ($insertStmt->execute()) {
-                header("Location: ../cr/?warning=success");
+                header("Location: ../reg/?warning=success");
                 exit(); // Important to terminate the script after the redirect
             } else {
                 // Error occurred during registration
-                header("Location: ../cr/?warning=conn_error");
+                header("Location: ../reg/?warning=conn_error");
                 exit();
             }
         } else {
             // Passwords do not match
-            header("Location: ../cr/?warning=password_mismatch");
+            header("Location: ../reg/?warning=password_mismatch");
             exit();
         }
     } else {
         // Username already exists
-        header("Location: ../cr/?warning=username_exists");
+        header("Location: ../reg/?warning=username_exists");
         exit();;
     }
 }
@@ -152,10 +152,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </ul>
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="../../login/">CR login</a>
+                    <a class="nav-link" aria-current="page" href="../login/">CR login</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="../">Register</a>
+                    <a class="nav-link" aria-current="page" href="../reg/">Register</a>
                 </li>
             </ul>            
         </div>
@@ -214,7 +214,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
         <div class="row">
             <div class="col-lg-8 col-12 offset-lg-2">
-                <form class = "requires-validation" action="../cr/index.php" method="post">
+                <form class = "requires-validation" action="../reg/" method="post">
                     <div class="container">
                         <div class="row">
                             <div class="col-md-12 mt-5">
