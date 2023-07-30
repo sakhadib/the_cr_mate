@@ -139,8 +139,21 @@
 
     <!-- Script -->
     <script>
+        function formatTimeTo12Hour(date) {
+          const hours = date.getHours();
+          const minutes = date.getMinutes();
+          const amOrPm = hours >= 12 ? 'PM' : 'AM';
+          const twelveHourFormatHours = hours % 12 || 12; // Convert 0 to 12 for midnight
+
+          const formattedTime = `${twelveHourFormatHours}:${minutes.toString().padStart(2, '0')} ${amOrPm}`;
+          return formattedTime; 
+        }
+
+
         const date = new Date();
-        const year = date.getUTCDate() + " / " + date.getUTCMonth() + " / " + date.getUTCFullYear();
+        const time = formatTimeTo12Hour(date) ;
+        const yearr = date.getDate() + " / " + date.getMonth() + " / " + date.getFullYear();
+        const year = time + "&nbsp&nbsp&nbsp" + yearr;
         document.getElementById("date").innerHTML = year;
         document.getElementById("date-2").innerHTML = year;
     </script>

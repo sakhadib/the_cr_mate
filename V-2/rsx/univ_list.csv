@@ -1,0 +1,266 @@
+1,University of Dhaka,DU,Dhaka,General,Public
+2,Jahangirnagar University,JU,Dhaka,General,Public
+3,University of Rajshahi,RU,Rajshahi,General,Public
+4,University of Chittagong,CU,Chattogram,General,Public
+5,"Islamic University, Bangladesh",IU,Kushtia,General,Public
+6,Khulna University,KU,Khulna,General,Public
+7,Jagannath University,JnU,Dhaka,General,Public
+8,Comilla University,CoU,Comilla,General,Public
+9,Jatiya Kabi Kazi Nazrul Islam University,JKKNIU,Mymensingh,General,Public
+10,Bangladesh University of Professionals,BUP,Dhaka,General,Public
+11,Begum Rokeya University,BRU,Rangpur,General,Public
+12,University of Barisal,BUP,Barisal,General,Public
+13,"Rabindra University, Bangladesh",RUBU,Sirajganj,General,Public
+14,Sheikh Hasina University,SHU,Netrokona,General,Public
+15,Bangabandhu Sheikh Mujibur Rahman University,BSMRU,Kishoreganj,General,Public
+16,Mujibnagar University,MU,Meherpur,General,Public
+17,Shahjalal University of Science and Technology,SUST,Sylhet,Science And Technology,Public
+18,Hajee Mohammad Danesh Science & Technology University,HSTU,Dinajpur,Science And Technology,Public
+19,Mawlana Bhashani Science and Technology University,MBSTU,Tangail,Science And Technology,Public
+20,Patuakhali Science and Technology University,PSTU,Patuakhali,Science And Technology,Public
+21,Noakhali Science and Technology University,NSTU,Noakhali,Science And Technology,Public
+22,Jashore University of Science and Technology,JUST,Jessore,Science And Technology,Public
+23,Pabna University of Science and Technology,PUST,Pabna,Science And Technology,Public
+24,Bangabandhu Sheikh Mujibur Rahman Science and Technology University,BSMRSTU,Gopalganj,Science And Technology,Public
+25,Rangamati Science and Technology University,RMSTU,Rangamati,Science And Technology,Public
+26,Bangamata Sheikh Fojilatunnesa Mujib Science & Technology University,BSFMSTU,Jamalpur,Science And Technology,Public
+27,Chandpur Science and Technology University,CSTU,Chandpur,Science And Technology,Public
+28,Sunamganj Science and Technology University,SSTU,Sunamganj,Science And Technology,Public
+29,Bogura Science and Technology University,BSTU,Bogura,Science And Technology,Public
+30,Lakshmipur Science and Technology University,LSTU,Lakshmipur,Science And Technology,Public
+31,Military Institute of Science and Technology,MIST,Dhaka,Science And Technology,Public
+32,Bangladesh Agricultural University,BAU,Mymensingh,Agricultural,Public
+33,Bangabandhu Sheikh Mujibur Rahman Agricultural University,BMSRAU,Gazipur,Agricultural,Public
+34,Sher-E-Bangla Agricultural University,SAU,Dhaka,Agricultural,Public
+35,Sylhet Agricultural University,SylAU,Sylhet,Agricultural,Public
+36,Khulna Agricultural University,KAU,Khulna,Agricultural,Public
+37,Habiganj Agricultural University,HAU,Habiganj,Agricultural,Public
+38,Kurigram Agricultural University,KuAU,Kurigram,Agricultural,Public
+39,Bangladesh University of Engineering & Technology,BUET,Dhaka,Engineering,Public
+40,Khulna University of Engineering & Technology,KUET,Khula,Engineering,Public
+41,Chittagong University of Engineering & Technology,CUET,Chattogram,Engineering,Public
+42,Rajshahi University of Engineering & Technology,RUET,Rajshahi,Engineering,Public
+43,Dhaka University of Engineering & Technology,DUET,Gazipur,Engineering,Public
+44,Chittagong Veterinary and Animal Sciences University,CVASU,Chattogram,Special,Public
+45,Bangladesh University of Textiles,BUTEX,Dhaka,Special,Public
+46,Bangabandhu Sheikh Mujibur Rahman Maritime University,BSMRMU,Chattogram,Special,Public
+47,Bangabandhu Sheikh Mujibur Rahman Digital University,BDU,"Kaliakoir, Gazipur",Special,Public
+48,Bangabandhu Sheikh Mujibur Rahman Aviation and Aerospace University,BSMRAAU,Lalmonirhat,Special,Public
+49,Bangladesh Open University,BOU,Gazipur,Off Campus,Public
+50,National University Bangladesh,NU,Gazipur,Off Campus,Public
+51,Islamic Arabic University,IAU,Dhaka,Off Campus,Public
+52,Islamic University of Technology,IUT,Gazipur,International,International
+53,Asian University for Women,AUW,Chattogram,International,International
+54,International University of Business Agriculture and Technology,IUBAT,Dhaka,General,Private
+55,North South University,NSU,Dhaka,General,Private
+56,"Independent University, Bangladesh",IUBAT,Dhaka,General,Private
+57,American International University-Bangladesh,AIUB,Dhaka,General,Private
+58,Dhaka International University,DIU,Dhaka,General,Private
+59,"International Islamic University, Chittagong",IIUC,Chattagram,General,Private
+60,Asian University of Bangladesh,AUB,Dhaka,General,Private
+61,East West University,EWU,Dhaka,General,Private
+62,Gono Bishwabidyalay,GB,Dhaka,General,Private
+63,People's University of Bangladesh,PUB,Dhaka,General,Private
+64,Queens University,QU,Dhaka,General,Private
+65,University of Asia Pacific (Bangladesh),UAP,Dhaka,General,Private
+66,Chittagong Independent University,CIU,Chattagram,General,Private
+67,BGMEA University of Fashion & Technology,BUFT,Dhaka,General,Private
+68,Bangladesh University,BU,Dhaka,General,Private
+69,BGC Trust University Bangladesh,BGCTUB,Chattagram,General,Private
+70,BRAC University,BRACU,Dhaka,General,Private
+71,Manarat International University,MIU,Dhaka,General,Private
+72,"Premier University, Chittagong",PU,Chattagram,General,Private
+73,"Southern University, Bangladesh",SUB,Chattagram,General,Private
+74,Sylhet International University,SIU,Sylhet,General,Private
+75,University of Development Alternative,UODA,Dhaka,General,Private
+76,"City University, Bangladesh",CUB,Dhaka,General,Private
+77,Daffodil International University,DIU,Dhaka,General,Private
+78,Green University of Bangladesh,GUB,Dhaka,General,Private
+79,IBAIS University,IU,Dhaka,General,Private
+80,Leading University,LNU,Sylhet,General,Private
+81,"Northern University, Bangladesh",NUB,Dhaka,General,Private
+82,Prime University,P U,Dhaka,General,Private
+83,Southeast University,SEU,Dhaka,General,Private
+84,Stamford University Bangladesh,SU,Dhaka,General,Private
+85,State University of Bangladesh,SUB,Dhaka,General,Private
+86,"Eastern University, Bangladesh",EU,Dhaka,General,Private
+87,Metropolitan University,MU,Sylhet,General,Private
+88,Millennium University,MU,Dhaka,General,Private
+89,Primeasia University,PAU,Dhaka,General,Private
+90,Royal University of Dhaka,RUD,Dhaka,General,Private
+91,United International University,UIU,Dhaka,General,Private
+92,University of Information Technology and Sciences,UITS,Dhaka,General,Private
+93,"University of South Asia, Bangladesh",USAB,Dhaka,General,Private
+94,Presidency University,PU,Dhaka,General,Private
+95,Uttara University,UU,Dhaka,General,Private
+96,Victoria University of Bangladesh,VUB,Dhaka,General,Private
+97,World University of Bangladesh,WUB,Dhaka,General,Private
+98,Asa University Bangladesh,ASAUB,Dhaka,General,Private
+99,Bangladesh Islami University,BANGLADESHIU,Dhaka,General,Private
+100,East Delta University,EASTDU,Chattagram,General,Private
+101,Northern University of Business and Technology Khulna,NUB,Khulna,General,Private
+102,Britannia University,BU,Comilla,General,Private
+103,Feni University,FU,Feni,General,Private
+104,Khwaja Yunus Ali University,KYAU,Sirajgonj,General,Private
+105,European University of Bangladesh,EUB,Dhaka,General,Private
+106,First Capital University Of Bangladesh,FCUB,Chuadanga,General,Private
+107,Hamdard University Bangladesh,HUB,Dhaka,General,Private
+108,Ishakha International University,IIUB,Kishoreganj,General,Private
+109,North East University Bangladesh,NEUB,Sylhet,General,Private
+110,"North Western University, Bangladesh",NWU,Khulna,General,Private
+111,Port City International University,PCIU,Chattagram,General,Private
+112,Varendra University,VU,Rajshahi,General,Private
+113,Sonargaon University,SU,Dhaka,General,Private
+114,Cox's Bazar International University,CBIU,Cox's Bazar,General,Private
+115,Fareast International University,FIU,Dhaka,General,Private
+116,German University Bangladesh,GUB,Gazipur,General,Private
+117,North Bengal International University,NBIU,Rajshahi,General,Private
+118,Notre Dame University Bangladesh,NDUB,Dhaka,General,Private
+119,Ranada Prasad Shaha University,RPSU,Narayanganj,General,Private
+120,Sheikh Fazilatunnesa Mujib University,SFMMU,Jamalpur,General,Private
+121,Times University Bangladesh,TMUB,Faridpur,General,Private
+122,Canadian University of Bangladesh,CUB,Dhaka,General,Private
+123,Global University Bangladesh,GUB,Barisal,General,Private
+124,NPI University of Bangladesh,NPIUB,Manikganj,General,Private
+125,Rabindra Maitree University,RMU,Kushtia,General,Private
+126,The International University of Scholars,IUS,Dhaka,General,Private
+127,University of Creative Technology Chittagong,UCTS,Chattagram,General,Private
+128,Canadian University of Bangladesh,CUB,Dhaka,General,Private
+129,Anwer Khan Modern University,AKMU,Dhaka,General,Private
+130,University of Global Village,UIVG,Barisal,General,Private
+131,"Trust University, Barishal",TU,Barisal,General,Private
+132,University of Brahmanbaria,UOB,Brahamanbaria,General,Private
+133,University of Skill Enrichment and Technology,USET,Narayanganj,General,Private
+134,International Standard University,ISU,Dhaka,General,Private
+135,ZNRF University of Management Sciences,ZUMS,Dhaka,General,Private
+136,Bandarban University,BU,Bandarban,General,Private
+137,RTM Al-Kabir Technical University,RTMAKTU,Sylhet,General,Private
+138,University of Science & Technology Chittagong,USTC,Chattagram,Science And Technology,Private
+139,Ahsanullah University of Science and Technology,AUST,Dhaka,Science And Technology,Private
+140,Pundra University of Science and Technolog,PUST,Bogra,Science And Technology,Private
+141,Bangladesh University of Business and Technology,BUBT,Dhaka,Science And Technology,Private
+142,Atish Dipankar University of Science and Technology,ADUST,Dhaka,Science And Technology,Private
+143,ZH Sikder University of Science & Technology,ZHSUST,Shariatpur,Science And Technology,Private
+144,Rajshahi Science & Technology University,RSTU,Natore,Science And Technology,Private
+145,Bangladesh Army International University of Science & Technology,BAIUST,Comilla,Science And Technology,Private
+146,Bangladesh Army University of Science and Technology,BAUST,Saidpur,Science And Technology,Private
+147,CCN University of Science & Technology,CCNUST,Comilla,Science And Technology,Private
+148,Central University of Science and Technology,CUST,Dhaka,Science And Technology,Private
+149,Central Women's University,CWU,Dhaka,Special,Private
+150,Shanto-Mariam University of Creative Technology,SMUCT,Dhaka,Special,Private
+151,University of Liberal Arts Bangladesh,ULAB,Dhaka,Special,Private
+152,Bangladesh University of Health Sciences,BUHS,Dhaka,Special,Private
+153,Exim Bank Agricultural University Bangladesh,EBAUB,Chapainawabganj,Special,Private
+154,Bangladesh Army University of Engineering & Technology,BAUET,Natore,Special,Private
+155,Tagore University of Creative Arts,TUCA,Dhaka,Special,Private
+156,Dhaka Medical College,DMC,Dhaka,Medical Collage,Public
+157,Sir Salimullah Medical College,SSMC,Dhaka,Medical Collage,Public
+158,Shaheed Suhrawardy Medical College,ShSMC,Dhaka,Medical Collage,Public
+159,Mymensingh Medical College,MMC,Mymensingh,Medical Collage,Public
+160,Chattogram Medical College,CMC,Chattogram,Medical Collage,Public
+161,Rajshahi Medical College,RMC,Rajshahi,Medical Collage,Public
+162,Sylhet MAG Osmani Medical College,SOMC,Sylhet,Medical Collage,Public
+163,Sher-e-Bangla Medical College,SBMC,Barishal,Medical Collage,Public
+164,Rangpur Medical College,RpMC,Rangpur,Medical Collage,Public
+165,Cumilla Medical College,CuMC,Cumilla,Medical Collage,Public
+166,Khulna Medical College,KMC,Khulna,Medical Collage,Public
+167,Shaheed Ziaur Rahman Medical College,SZMC,Bogura,Medical Collage,Public
+168,Bangabandhu Sheikh Mujib Medical College,BSMMC,Faridpur,Medical Collage,Public
+169,M Abdur Rahim Medical College,MARMC,Dinajpur,Medical Collage,Public
+170,Pabna Medical College,PMC,Pabna,Medical Collage,Public
+171,Abdul Malek Ukil Medical College,AMUMC,Noakhali,Medical Collage,Public
+172,Cox's Bazar Medical College,CoxMC,Cox's Bazar,Medical Collage,Public
+173,Jashore Medical College,JMC,Jashore,Medical Collage,Public
+174,Satkhira Medical College,SMC,Satkhira,Medical Collage,Public
+175,Shahid Syed Nazrul Islam Medical College,SSNIMC,Kishoreganj,Medical Collage,Public
+176,Kushtia Medical College,KuMC,Kushtia,Medical Collage,Public
+177,Sheikh Sayera Khatun Medical College,SSKMC,Gopalganj,Medical Collage,Public
+178,Shaheed Tajuddin Ahmad Medical College,STAMC,Gazipur,Medical Collage,Public
+179,"Sheikh Hasina Medical College,Tangail",SHMCT,Tangail,Medical Collage,Public
+180,"Sheikh Hasina Medical College,Jamalpur",SHMCJ,Jamalpur,Medical Collage,Public
+181,Colonel Malek Medical College,CMMC,Manikganj,Medical Collage,Public
+182,Shaheed M. Monsur Ali Medical College,SMMAMC,Sirajganj,Medical Collage,Public
+183,Patuakhali Medical College,PkMC,Patuakhali,Medical Collage,Public
+184,Rangamati Medical College,RmMC,Rangamati,Medical Collage,Public
+185,Mugda Medical College,MuMC,Dhaka,Medical Collage,Public
+186,"Sheikh Hasina Medical College, Habiganj",SHMCH,Habiganj,Medical Collage,Public
+187,"Netrokona Medical College, Netrokona",NMC,Netrokona,Medical Collage,Public
+188,Nilphamari Medical College,NpMC,Nilphamari,Medical Collage,Public
+189,Magura Medical College,MaMC,Magura,Medical Collage,Public
+190,Naogaon Medical College,NaMC,Naogaon,Medical Collage,Public
+191,Chandpur Medical College,ChMC,Chandpur,Medical Collage,Public
+192,Bangabandhu Medical College,BBMC,Sunamganj,Medical Collage,Public
+193,Dhaka National Medical College,DNMC,Dhaka,Medical Collage,Private
+194,Ibrahim Medical College,IMC,Dhaka,Medical Collage,Private
+195,Bangladesh Medical College,BMCH,Dhaka,Medical Collage,Private
+196,Holy Family Red Crescent Medical College,HFRCMC,Dhaka,Medical Collage,Private
+197,Jahurul Islam Medical College,JIMC,Kishoreganj,Medical Collage,Private
+198,Uttara Adhunik Medical College,UAMC,Dhaka,Medical Collage,Private
+199,Shaheed Monsur Ali Medical College,SMAMC,Dhaka,Medical Collage,Private
+200,Enam Medical College and Hospital,EMCH,Savar,Medical Collage,Private
+201,Community Based Medical College,CBMCB,Mymensingh,Medical Collage,Private
+202,Dhaka Central International Medical College,DCIMC,Dhaka,Medical Collage,Private
+203,Ibn Sina Medical College,ISMC,Dhaka,Medical Collage,Private
+204,TMSS Medical College,TMC,Bogra,Medical Collage,Private
+205,Shahabuddin Medical College,SMC,Dhaka,Medical Collage,Private
+206,Medical College for Women & Hospital,MCW,Dhaka,Medical Collage,Private
+207,Z. H. Sikder Women's Medical College,ZHSWMC,Dhaka,Medical Collage,Private
+208,Kumudini Women's Medical College,KWMC,Tangail,Medical Collage,Private
+209,Tairunnessa Memorial Medical College,TMMC,Gazipur,Medical Collage,Private
+210,Ad-din Women's Medical College,AWMC,Dhaka,Medical Collage,Private
+211,International Medical College,IMC,Gazipur,Medical Collage,Private
+212,Central Medical College,CEMEC,Comilla,Medical Collage,Private
+213,BGC Trust Medical College,BGCTMC,Chittagong,Medical Collage,Private
+214,Eastern Medical College,EMC,Comilla,Medical Collage,Private
+215,Islami Bank Medical College,IBMC,Rajshahi,Medical Collage,Private
+216,Khwaja Yunus Ali Medical College,KYAMC,Enayetpur,Medical Collage,Private
+217,Jalalabad Ragib-Rabeya Medical College,JRRMC,Sylhet,Medical Collage,Private
+218,East West Medical College,EWMCH,Dhaka,Medical Collage,Private
+219,North East Medical College,NEMC,Sylhet,Medical Collage,Private
+220,Chattagram Maa-O-Shishu Hospital Medical College,CMOSHMC,Agrabad,Medical Collage,Private
+221,Gonoshasthaya Samaj Vittik Medical College,GSVMC,Savar,Medical Collage,Private
+222,Institute of Applied Health Sciences,IAHS,Chittagong,Medical Collage,Private
+223,Prime Medical College,PMC,Rangpur,Medical Collage,Private
+224,North Bengal Medical College,NBMC,Sirajganj,Medical Collage,Private
+225,Rangpur Community Medical College,RCMC,Rangpur,Medical Collage,Private
+226,Delta Medical College,DLMC,Dhaka,Medical Collage,Private
+227,Southern Medical College,SMCH,Chittagong,Medical Collage,Private
+228,Anwer Khan Modern Medical College,AKMMC,Dhaka,Medical Collage,Private
+229,Ad-din Sakina Medical College,ASMC,Jessore,Medical Collage,Private
+230,Popular Medical College,PMC,Dhaka,Medical Collage,Private
+231,Green Life Medical College,GMCH,Dhaka,Medical Collage,Private
+232,Dhaka Community Medical College,DCMC,Dhaka,Medical Collage,Private
+233,Sylhet Women's Medical College,SWMC,Sylhet,Medical Collage,Private
+234,Monno Medical College,MoMC,Dhaka,Medical Collage,Private
+235,MH Samorita Medical College,MHSMC,Dhaka,Medical Collage,Private
+236,City Medical College,CiMC,Gazipur,Medical Collage,Private
+237,Marks Medical College,MarksMC,Dhaka,Medical Collage,Private
+238,Diabetic Association Medical College,DAMC,Faridpur,Medical Collage,Private
+239,Barind Medical College,BMC,Rajshahi,Medical Collage,Private
+240,Gazi Medical College,GMC,Khulna,Medical Collage,Private
+241,Northern International Medical College,NIMC,Dhaka,Medical Collage,Private
+242,Dr. Sirajul Islam Medical College,SIMC,Dhaka,Medical Collage,Private
+243,Mainamoti Medical College,MMCH,Comilla,Medical Collage,Private
+244,Bikrampur Bhuiyans Medical College,BBMC,Munshiganj,Medical Collage,Private
+245,Universal Medical College,UMC,Dhaka,Medical Collage,Private
+246,Ashiyan Medical College,AMC,Dhaka,Medical Collage,Private
+247,US-Bangla Medical College,USBMC,Narayanganj,Medical Collage,Private
+248,President Abdul Hamid Medical College,PAHMC,Kishoreganj,Medical Collage,Private
+249,Brahmanbaria Medical College,BBMC,Brahmanbaria,Medical Collage,Private
+250,Parkview Medical College,PMC,Sylhet,Medical Collage,Private
+251,Ad-Din Akij Medical College,AAMC,Khulna,Medical Collage,Private
+252,Monowara Sikder Medical College,MSMC,Shariatpur,Medical Collage,Private
+253,Bashundhara Ad-din Medical College,BAMC,Dhaka,Medical Collage,Private
+254,Aichi Medical College,AIMC,Dhaka,Medical Collage,Private
+255,Marine City Medical College,MCMC,Chittagong,Medical Collage,Private
+256,Khulna City Medical College,KCMC,Khulna,Medical Collage,Private
+257,Chattagram International Medical College,CIMCH,Chittagong,Medical Collage,Private
+258,United Medical College,UnMC,Dhaka,Medical Collage,Private
+259,South Apollo Medical College,SAMC,Barishal,Medical Collage,Private
+260,Ahsania Mission Medical College,AMMC,Dhaka,Medical Collage,Private
+261,Armed Forces Medical College,AFMC,Dhaka Cantonment,Medical Collage,Military
+262,Army Medical College Bogura,AMCB,Bogra Cantonment,Medical Collage,Military
+263,"Army Medical College, Chittagong",AMCC,Chittagong Cantonment,Medical Collage,Military
+264,Army Medical College Cumilla,AMCCu,Cumilla Cantonment,Medical Collage,Military
+265,"Army Medical College, Jashore",AMCJ,Jashore Cantonment,Medical Collage,Military
+266,Rangpur Army Medical College,RAMC,Rangpur Cantonment,Medical Collage,Military
