@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CR Mate</title>
+
+    <!-- Site Icon -->
+    <link rel="icon" type="image/x-icon" href="../rsx/logo.ico"> <!-- Link to the Path of icon -->
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+
+    <!-- Unicons -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+
+    <!-- Style and Scripts -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg navbar-secondary">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="../rsx/logo-big.png" alt="Logo" height="40" class="d-inline-block align-text-top">
+            </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link link-danger fw-bold" aria-current="page" href="../cr/">Dashboard</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../../gen/noticeboard/">NoticeBoard</a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link" href="../../gen/about/">About us</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="profile/">Profile</a> <!-- Link to the Path of Profile -->
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="../logout/">logout</a>
+                </li>
+            </ul>            
+        </div>
+        </div>
+    </nav>
+    <!-- Navbar end -->
+
+    <!-- Insignts Start -->
+    <div class="container">
+        <div class="sh-insight mt-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-12">
+                        <div class="pi-container">
+                            <canvas id="newspi"></canvas>
+                        </div>
+                    </div>
+                    <div class="col-lg-7 offset-lg-1 col-12">
+                        <div class="row">
+                            <div class="col-12 mt-lg-0 mt-5">
+                                <p class="sh-university">Islamic University of Technology (IUT)</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <p class="sh-ins-meta"><strong>Department :</strong> CSE</p>
+                            </div>
+                            <div class="col-lg-6">
+                                <p class="sh-ins-meta"><strong>Program : </strong>Software Engineering</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <p class="sh-ins-meta"><Strong>Batch : </Strong> 2021 </p>
+                            </div>
+                            <div class="col-lg-6">
+                                <p class="sh-ins-meta"><strong>UPI : </strong> aqa</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-6 col-12 mt-3">
+                                <div class="sh-wrap">
+                                    <div class="row">
+                                        <div class="col-5 d-flex align-items-center justify-content-center">
+                                            <p class="sh-data">40</p>
+                                        </div>
+                                        <div class="col-7 d-flex align-items-center">
+                                            <p class="sh-data-off">Academic</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-12 mt-3">
+                                <div class="sh-wrap" style="background-color: #36A2EB;">
+                                    <div class="row">
+                                        <div class="col-5 d-flex align-items-center justify-content-center">
+                                            <p class="sh-data">56</p>
+                                        </div>
+                                        <div class="col-7 d-flex align-items-center">
+                                            <p class="sh-data-off">Club News</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-12 mt-3">
+                                <div class="sh-wrap" style="background-color: #FFCE56;">
+                                    <div class="row">
+                                        <div class="col-5 d-flex align-items-center justify-content-center">
+                                            <p class="sh-data">23</p>
+                                        </div>
+                                        <div class="col-7 d-flex align-items-center">
+                                            <p class="sh-data-off">classroom</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-12 mt-3">
+                                <div class="sh-wrap" style="background-color: #4BC0C0;">
+                                    <div class="row">
+                                        <div class="col-5 d-flex align-items-center justify-content-center">
+                                            <p class="sh-data">156</p>
+                                        </div>
+                                        <div class="col-7 d-flex align-items-center">
+                                            <p class="sh-data-off">files shared</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+
+
+
+
+    <!-- Java Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        const newspi = document.getElementById('newspi');
+
+        const newspiData = {
+            labels: [
+                'Academic',
+                'Club',
+                'Classroom',
+                'Filse shared'
+            ],
+            data: [40, 56, 23, 154],
+            // <?php echo 'data: ['. $academic_ct .', '. $club_ct .', '. $classroom_ct .', '. $files_ct .']' ?>
+        }
+
+        new Chart(newspi, {
+            type: 'doughnut',
+            data: {
+                labels: newspiData.labels,
+                datasets: [{
+                    
+                    data: newspiData.data,
+                    backgroundColor: [
+                        '#FF6384',
+                        '#36A2EB',
+                        '#FFCE56',
+                        '#4BC0C0'
+                    ],
+                    hoverOffset: 10
+                }]
+            },
+        })
+    </script>
+
+</body>
+</html>

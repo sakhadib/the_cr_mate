@@ -1,4 +1,6 @@
 <?php
+
+    session_start();
     if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
         header("location: ../");
         exit();
@@ -9,53 +11,51 @@
     require_once '../../connection.php';
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $user = $_POST['user'];
-        $upi = $_POST['upi'];
         $pass = $_POST['pass'];
 
-        if($upi == 'xxx'){
-            header("location: ../login/?warning=upinf");
-            exit();
-        }
-        else{
-            // Prepare the SQL statement with placeholders
-            $sql = "SELECT * FROM `S_cr` WHERE `username` = ?";
-            $stmt = mysqli_prepare($conn, $sql);
-        
-            // Bind the username parameter to the placeholder
-            mysqli_stmt_bind_param($stmt, 's', $user);
-        
-            // Execute the prepared statement
-            mysqli_stmt_execute($stmt);
-        
-            // Get the result from the prepared statement
-            $result = mysqli_stmt_get_result($stmt);
-        
-            // Check if the query returned any rows
-            if (mysqli_num_rows($result) == 1) {
-                // Fetch the hashed password from the result set
-                $row = mysqli_fetch_assoc($result);
-                $hashedPassword = $row['password'];
-        
-                // Verify the password using password_verify
-                if (password_verify($pass, $hashedPassword)) {
-                    session_start();
-                    $_SESSION['loggedin'] = true;
-                    $_SESSION['username'] = $user;
-                    $_SESSION['upi'] = $row['UPI'];
-                    header("location: ../");
-                    exit(); // Always exit after redirection
-                } else {
-                    // Invalid password
-                    header("location: ../login/?warning=pm");
-                }
-            } else {
-                // User not found
-                header("location: ../login/?warning=unf");
+        // Prepare the SQL statement with placeholders
+        $sql = "SELECT * FROM `S_cr` WHERE `username` = ?";
+        $stmt = mysqli_prepare($conn, $sql);
+
+        // Bind the username parameter to the placeholder
+        mysqli_stmt_bind_param($stmt, 's', $user);
+
+        // Execute the prepared statement
+        mysqli_stmt_execute($stmt);
+
+        // Get the result from the prepared statement
+        $result = mysqli_stmt_get_result($stmt);
+
+        // Check if the query returned any rows
+        if (mysqli_num_rows($result) == 1) {
+            // Fetch the hashed password from the result set
+            $row = mysqli_fetch_assoc($result);
+            $hashedPassword = $row['password'];
+            $upi = $row['UPI'];
+            if($upi == "xxx") {
+                header("location: ../login/?warning=upinf");
+                exit();
             }
-            // Close the statement and connection
-            mysqli_stmt_close($stmt);
-            mysqli_close($conn);
+            // Verify the password using password_verify
+            if (password_verify($pass, $hashedPassword)) {
+                session_start();
+                $_SESSION['loggedin'] = true;
+                $_SESSION['username'] = $user;
+                $_SESSION['upi'] = $upi;
+                header("location: ../");
+                exit(); // Always exit after redirection
+            } else {
+                // Invalid password
+                header("location: ../login/?warning=pm");
+            }
+        } else {
+            // User not found
+            header("location: ../login/?warning=unf");
         }
+        // Close the statement and connection
+        mysqli_stmt_close($stmt);
+        mysqli_close($conn);
+
     }
 ?>
 
@@ -178,10 +178,6 @@
                         <div class="form-floating mb-3">
                             <input type="text" class="form-control" id="floatingInput" placeholder="username" name="user" required>
                             <label for="floatingInput">username</label>
-                        </div>
-                        <div class="form-floating mb-3">
-                            <input type="text" class="form-control" id="floatingInput" placeholder="upi" name="upi" required>
-                            <label for="floatingInput">UPI</label>
                         </div>
                         <div class="form-floating">
                             <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="pass" required>

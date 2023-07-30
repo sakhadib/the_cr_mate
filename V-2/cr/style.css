@@ -1,0 +1,56 @@
+html, body{
+    background-color: rgb(243, 243, 243);
+    min-height: 100vh;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+.sh-insight{
+    background-color: rgb(255, 255, 255);
+    border-radius: 5px;
+    padding: 40px;
+    margin-bottom: 10px;
+    min-height: 40vh;
+    box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.1);
+}
+
+.sh-university{
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.sh-ins-meta{
+    font-size: 16px;
+    color: rgb(89, 89, 89);
+}
+
+.sh-data{
+    font-size: 35px;
+    font-weight: 600;
+    color: #000000;
+    /* text-align: center; */
+    margin: 0;
+}
+
+.sh-data-off{
+    font-size: 22px;
+    font-weight: 600;
+    color: #000000;
+    /* text-align: center; */
+    margin: 0;
+}
+
+.sh-wrap{
+    min-height: 80px;
+    box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.1);
+    background-color: #FF6384;
+    border-radius: 5px;
+    padding: 15px;
+}
+
+
