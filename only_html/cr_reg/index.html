@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CR Mate</title>
+
+    <!-- Site Icon -->
+    <link rel="icon" type="image/x-icon" href="../../rsx/logo.ico"> <!-- Link to the Path of icon -->
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+
+    <!-- Unicons -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+
+    <!-- Style and Scripts -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navbar Start -->
+        <!-- php -->
+    <!-- Navbar end -->
+
+    <!-- Main Start -->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 sh-up">
+                <div class="sh-hd">
+                    <p>Sign Up for your class</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container sh-form-container">
+        <div class="row">
+            <div class="col-12 sh-frhd mt-5">
+                <h2>Read the instructions Carefully</2>
+                <h5><span class="text-danger">*</span> Fields Are Required</h5>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-8 col-12 offset-lg-2">
+                <form class="requires-validation" action="../cr/" method="post"></form>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12 mt-5">
+                                <h4>Personal Information</h4>
+                                <p class="text-secondary" style="text-align: justify;">Please fillout required Information. Your username must be unique. You will be contacted through your
+                                    email address. So, please provide a valid email address.
+                                </p>
+                            </div>
+                            <div class="col-md-8 mt-1">
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control" id="floatingInput" placeholder="name" name="fullname" required>
+                                    <label for="floatingInput">your full name <span class="text-danger">*</span></label>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mt-1">
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control" id="floatingInput" placeholder="username" name="username" required>
+                                    <label for="floatingInput">username <span class="text-danger">*</span></label>
+                                </div>
+                            </div>
+                            <div class="col-md-12 mt-1">
+                                <div class="form-floating mb-3">
+                                    <input type="email" class="form-control" id="floatingInput" placeholder="email" name="email" required>
+                                    <label for="floatingInput">email address <span class="text-danger">*</span></label>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mt-1">
+                                <div class="form-floating mb-3">
+                                    <input type="email" class="form-control" id="floatingInput" placeholder="password" name="password" required>
+                                    <label for="floatingInput">password <span class="text-danger">*</span></label>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mt-1">
+                                <div class="form-floating mb-3">
+                                    <input type="email" class="form-control" id="floatingInput" placeholder="re_password" name="re_password" required>
+                                    <label for="floatingInput">retype password <span class="text-danger">*</span></label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 mt-5">
+                                <h4>University Information</h4>
+                                <p class="text-secondary" style="text-align: justify;">Your university information is required. 
+                                    Please provide required information about your University and Class. If you are unsure about your program,
+                                    leave it blank.
+                                </p>
+                            </div>
+                            <div class="col-md-12 mt-1">
+                                <input class="form-control" list="datalistOptions" id="exampleDataList" placeholder='Type Your University name to search...*' required>
+                                <datalist id="datalistOptions">
+                                    <option value="Islamin University of Technology">
+                                    <option value="Rajshahi University">
+                                    <!-- PHP options -->
+                                </datalist>
+                            </div>
+                            <div class="col-md-6 mt-2">
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control" id="floatingInput" placeholder="department" name="department" required>
+                                    <label for="floatingInput">Department <span class="text-danger">*</span></label>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mt-2">
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control" id="floatingInput" placeholder="program" name="program">
+                                    <label for="floatingInput">program</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 mt-5">
+                                <h4>Proof of your CRship</h4>
+                                <p class="text-secondary" style="text-align: justify;">You have to provide a proof of your studentship. 
+                                    Please provide a valid proof of your CRship / studentship of that program / department. 
+                                    <span class="text-danger fw-bold"> Both side of your university ID card</span>
+                                    or anything that shows your name, department, program, university name and your ID number will be accepted.
+                                </p>
+                            </div>
+                            <div class="col-md-12 mt-2">
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control" id="floatingInput" placeholder="proof_link" name="proof_link" required>
+                                    <label for="floatingInput">Google Drive Link <span class="text-danger">*</span></label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 mt-5">
+                                <p class="text-secondary" style="text-align: justify;">By clicking 
+                                    <span class="text-success fw-bold">Register Button</span> You are agreeing to our 
+                                    <a href="../../static/privacy/" class="text-decoration-none" target="_blank">Privacy Policy</a>.
+                                    
+                                </p>
+                            </div>
+                            <div class="form-button mt-3">
+                                <button id="submit" type="submit" class="btn btn-success sh-search" style="width: 100%;">Register</button>
+                            </div> 
+                        </div>
+                        
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+
+</body>
+</html>
